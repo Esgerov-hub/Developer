@@ -14,8 +14,11 @@ class UsersController extends Controller
 
     public function index()
     {
-
-        return view('users.index');
+        $users = User::orderBy('id','desc')->get();
+        return view('users.index',
+        [
+            'users' => $users
+        ]);
     }
 
 
@@ -27,14 +30,6 @@ class UsersController extends Controller
 
     public function store(Request $request)
     {
-
-        $request->validate([
-//            'image' => 'required|max:512',
-            'name' => 'required|max:25',
-            'email' => 'required|email|unique:users',
-            'password' => 'required|min:6'
-        ]);
-
         try {
             $user = new User();
             $user->image = $request->image;
@@ -47,7 +42,7 @@ class UsersController extends Controller
             $user->save();
 
             DB::commit();
-            return redirect(route('register'));
+            return redirect(route('users.index'));
 
         } catch (\Throwable $exception)
         {
@@ -74,6 +69,8 @@ class UsersController extends Controller
 
     public function destroy(User $user)
     {
-
+//        return $user;
+        $user->delete();
+        return redirect(route('users.index'));
     }
 }

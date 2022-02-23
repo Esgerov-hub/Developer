@@ -132,7 +132,7 @@
                     </li>
 
                     <li >
-                        <a href="{{ route('register') }}"><i class="la la-users"></i> <span> Users</span></a>
+                        <a href="{{ route('users.index') }}"><i class="la la-users"></i> <span> Users</span></a>
 
                     </li>
 

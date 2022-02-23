@@ -96,6 +96,7 @@
                             </tr>
                             </thead>
                             <tbody>
+                            @foreach($users as $user)
                             <tr>
                                 <td>1</td>
                                 <td>
@@ -136,7 +137,7 @@
                                     </div>
                                 </td>
                             </tr>
-
+                            @endforeach
                             </tbody>
                         </table>
                     </div>
