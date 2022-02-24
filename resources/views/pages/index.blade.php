@@ -218,8 +218,10 @@
                                                     {!! $service->text !!}
                                                 </div>
                                                 <!-- button -->
-                                                <div class="art-buttons-frame"><a href="{{ route('contact') }}"
-                                                                                  class="art-link art-color-link art-w-chevron">Contact</a></div>
+                                                <div class="art-buttons-frame">
+                                                    <!-- button -->
+                                                    <a href="{{ route('contact') }}" class="art-btn art-btn-md"><span>Contact</span></a>
+                                                </div>
                                             </div>
                                             <!-- service content end -->
                                         </div>
@@ -266,7 +268,7 @@
                                 <!-- slider wrapper -->
                                 <div class="swiper-wrapper">
                                     <!-- slide -->
-                                    @foreach($services as $service)
+
                                         <div class="swiper-slide">
                                             <!-- service -->
 
@@ -283,8 +285,10 @@
                                                     <h5 class="mb-15">Project title</h5>
                                                     <div class="mb-15">Sit amet, consectetur adipisicing elit. Quas, architecto.</div>
                                                     <!-- button -->
-                                                    <div class="art-buttons-frame"><a href="{{ route('contact') }}"
-                                                                                      class="art-link art-color-link art-w-chevron">Contact</a></div>
+                                                    <div class="art-buttons-frame">
+                                                        <!-- button -->
+                                                        <a href="{{ route('contact') }}" class="art-btn art-btn-md"><span>Contact</span></a>
+                                                    </div>
                                                 </div>
                                                 <!-- service content end -->
                                             </div>
@@ -306,8 +310,10 @@
                                                     <h5 class="mb-15">Project title</h5>
                                                     <div class="mb-15">Sit amet, consectetur adipisicing elit. Quas, architecto.</div>
                                                     <!-- button -->
-                                                    <div class="art-buttons-frame"><a href="{{ route('contact') }}"
-                                                                                      class="art-link art-color-link art-w-chevron">Contact</a></div>
+                                                    <div class="art-buttons-frame">
+                                                        <!-- button -->
+                                                        <a href="{{ route('contact') }}" class="art-btn art-btn-md"><span>Contact</span></a>
+                                                    </div>
                                                 </div>
                                                 <!-- service content end -->
                                             </div>
@@ -329,14 +335,16 @@
                                                     <h5 class="mb-15">Project title</h5>
                                                     <div class="mb-15">Sit amet, consectetur adipisicing elit. Quas, architecto.</div>
                                                     <!-- button -->
-                                                    <div class="art-buttons-frame"><a href="{{ route('contact') }}"
-                                                                                      class="art-link art-color-link art-w-chevron">Contact</a></div>
+                                                    <div class="art-buttons-frame">
+                                                        <!-- button -->
+                                                        <a href="{{ route('contact') }}" class="art-btn art-btn-md"><span>Contact</span></a>
+                                                    </div>
                                                 </div>
                                                 <!-- service content end -->
                                             </div>
                                             <!-- service end -->
                                         </div>
-                                @endforeach
+
                                 <!-- slide -->
                                 </div>
 
