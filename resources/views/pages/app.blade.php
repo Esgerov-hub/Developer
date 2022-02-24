@@ -3,7 +3,7 @@
 
 
 <!-- Mirrored from elanta.app/nazar/arter-demo/home.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 22 Feb 2022 10:24:05 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<!-- Added by HTTrack --><!-- /Added by HTTrack -->
 @yield('pages.css')
 
 <body>
@@ -233,15 +233,15 @@
                     <!-- sidebar social -->
                     <div class="art-ls-social">
                         <!-- social link -->
-                        <a href="#." target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                         <!-- social link -->
-                        <a href="#." target="_blank"><i class="fab fa-dribbble"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-dribbble"></i></a>
                         <!-- social link -->
-                        <a href="#." target="_blank"><i class="fab fa-behance"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-behance"></i></a>
                         <!-- social link -->
-                        <a href="#." target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-github"></i></a>
                         <!-- social link -->
-                        <a href="#." target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
                     </div>
                     <!-- sidebar social end -->
 
@@ -270,12 +270,6 @@
                         </a>
                         <!-- menu bar button end -->
                     </div>
-                    <!-- menu bar header end -->
-
-                    <!-- current page title -->
-                    <!-- current page title end -->
-
-                    <!-- scroll frame -->
                     <div class="art-scroll-frame">
 
                         <!-- menu -->
@@ -287,15 +281,7 @@
                                 <!-- menu item -->
                                 <li class="menu-item"><a href="{{ route('about') }}">About Us</a></li>
                                 <li class="menu-item"><a href="{{ route('service') }}" target="_blank">Service</a></li>
-                                <li class="menu-item ">
-                                    <a href="{{route('portfolio')}}">Portfolio</a>
-                                    <!-- sub menu -->
-
-                                    <!-- sub menu end -->
-                                </li>
-                                <!-- menu item -->
-
-                                <!-- menu item -->
+                                <li class="menu-item "><a href="{{route('portfolio')}}">Portfolio</a></li>
                                 <li class="menu-item"><a href="{{ route('contact') }}">Contact</a></li>
 {{--                                <!-- menu item -->--}}
 {{--                                <li class="menu-item ">--}}
@@ -351,6 +337,7 @@
 </div>
 <!-- app end -->
 @yield('pages.js')
+
 
 </body>
 </html>
