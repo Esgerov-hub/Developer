@@ -53,9 +53,9 @@
                         </div>
                         <!-- avatar end -->
                         <!-- name -->
-                        <h5 class="art-name mb-10"><a href="home.html">Artur Carter</a></h5>
+                        <h5 class="art-name mb-10"><a href="home.html">Asgarov Anvar</a></h5>
                         <!-- post -->
-                        <div class="art-sm-text">Front-end Deweloper <br>Ui/UX Designer, </div>
+                        <div class="art-sm-text">Back-End Developer <br>PHP,Laravel </div>
                     </div>
                     <!-- info bar header end -->
 
@@ -68,15 +68,15 @@
                             <ul>
                                 <!-- country -->
                                 <li>
-                                    <h6>Residence:</h6><span>Canada</span>
+                                    <h6>Residence:</h6><span>Azerbaijan</span>
                                 </li>
                                 <!-- city -->
                                 <li>
-                                    <h6>City:</h6><span>Toronto</span>
+                                    <h6>City:</h6><span>Baku</span>
                                 </li>
                                 <!-- age -->
                                 <li>
-                                    <h6>Age:</h6><span>26</span>
+                                    <h6>Age:</h6><span>21</span>
                                 </li>
                             </ul>
                         </div>
@@ -327,6 +327,7 @@
 
             </div>
             <!-- menu bar end -->
+
 
         </div>
         <!-- app container end -->

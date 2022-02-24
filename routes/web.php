@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\UsersController;
+use  App\Http\Controllers\Admin\AboutController;
+use App\Http\Controllers\Admin\ServiceController;
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Pages\IndexController;
@@ -20,6 +22,9 @@ Route::get('/contact',[IndexController::class,'contact'])->name('contact');
 
 
 Route::resource('users',UsersController::class);
+Route::resource('abouts',AboutController::class);
+Route::resource('services',ServiceController::class);
+
 
 Auth::routes();
 

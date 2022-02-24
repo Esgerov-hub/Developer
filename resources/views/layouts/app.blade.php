@@ -136,6 +136,14 @@
 
                     </li>
 
+                    <li >
+                        <a href="{{ route('abouts.index') }}"><i class="la la-file-text"></i> <span> About Us</span></a>
+
+                    </li>
+                    <li >
+                        <a href="{{ route('services.index') }}"><i class="la la-server"></i> <span> Services</span></a>
+
+                    </li>
                 </ul>
             </div>
         </div>

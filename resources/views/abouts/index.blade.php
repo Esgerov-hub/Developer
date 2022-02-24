@@ -8,7 +8,7 @@
               content="admin, estimates, bootstrap, business, corporate, creative, management, minimal, modern, accounts, invoice, html5, responsive, CRM, Projects">
         <meta name="author" content="Dreamguys - Bootstrap Admin Template">
         <meta name="robots" content="noindex, nofollow">
-        <title>Users</title>
+        <title>About Us</title>
 
         <!-- Favicon -->
         <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/img/favicon.png') }}">
@@ -51,14 +51,14 @@
             <div class="page-header">
                 <div class="row align-items-center">
                     <div class="col">
-                        <h3 class="page-title">Users</h3>
+                        <h3 class="page-title">About Us</h3>
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{ route('home') }}">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Users</li>
+                            <li class="breadcrumb-item active">About Us</li>
                         </ul>
                     </div>
                     <div class="col-auto float-right ml-auto">
-                        <a href="{{ route('users.create') }}" class="btn add-btn" data-toggle="modal"
+                        <a href="{{ route('abouts.create') }}" class="btn add-btn" data-toggle="modal"
                            data-target="#add_ticket">
                             <i class="fa fa-plus">
                             </i>Create</a>
@@ -71,7 +71,7 @@
                 <div class="col-sm-6 col-md-3 col-lg-3 col-xl-2 col-12">
                     <div class="form-group form-focus">
                         <input type="text" class="form-control floating">
-                        <label class="focus-label">User Name</label>
+                        <label class="focus-label">Description</label>
                     </div>
                 </div>
 
@@ -88,7 +88,7 @@
                             <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Name</th>
+                                <th>Title</th>
                                 <th>Created Date</th>
                                 <th>Update Date</th>
                                 <th class="text-center">Status</th>
@@ -96,18 +96,16 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($users as $user)
+                            @foreach($abouts as $about)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>
                                         <h2 class="table-avatar">
-                                            <a class="avatar avatar-xs" href="profile.html"><img alt=""
-                                                                                                 src="{{ $user->image }}"></a>
-                                            <a href="#">{{ $user->name }}</a>
+                                            <a href="#">{{ $about->description }}</a>
                                         </h2>
                                     </td>
-                                    <td>{{ $user->created_at }}</td>
-                                    <td>{{ $user->updated_at }}</td>
+                                    <td>{{ $about->created_at }}</td>
+                                    <td>{{ $about->updated_at }}</td>
                                     <td class="text-center">
                                         <div class="dropdown action-label">
                                             <a class="btn btn-white btn-sm btn-rounded dropdown-toggle" href="#"
@@ -128,11 +126,11 @@
                                             <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown"
                                                aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                             <div class="dropdown-menu dropdown-menu-right">
-                                                <a class="dropdown-item" href="{{ route('users.edit',$user->id)  }}"
-                                                  ><i class="fa fa-pencil m-r-5"></i>
+                                                <a class="dropdown-item" href="{{ route('abouts.edit',$about->id)  }}"
+                                                ><i class="fa fa-pencil m-r-5"></i>
                                                     Edit</a>
 
-                                                <form method="POST" action="{{route('users.destroy',$user->id)}}">
+                                                <form method="POST" action="{{route('abouts.destroy',$about->id)}}">
                                                     @method('DELETE')
                                                     @csrf
                                                     <button class="dropdown-item" type="submit" data-toggle="modal"
@@ -143,13 +141,13 @@
 
                                                     </button>
                                                 </form>
-{{--                                                <form action="{{ route('users.destroy',$user->id) }}" method="POST">--}}
-{{--                                                    @csrf--}}
-{{--                                                    <a class="dropdown-item"--}}
-{{--                                                       href="{{ route('users.destroy',$user->id) }}" data-toggle="modal"--}}
-{{--                                                       data-target="#delete_ticket"><i class="fa fa-trash-o m-r-5"></i>--}}
-{{--                                                        Delete</a>--}}
-{{--                                                </form>--}}
+                                                {{--                                                <form action="{{ route('users.destroy',$user->id) }}" method="POST">--}}
+                                                {{--                                                    @csrf--}}
+                                                {{--                                                    <a class="dropdown-item"--}}
+                                                {{--                                                       href="{{ route('users.destroy',$user->id) }}" data-toggle="modal"--}}
+                                                {{--                                                       data-target="#delete_ticket"><i class="fa fa-trash-o m-r-5"></i>--}}
+                                                {{--                                                        Delete</a>--}}
+                                                {{--                                                </form>--}}
 
                                             </div>
                                         </div>
@@ -169,7 +167,7 @@
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">New User</h5>
+                        <h5 class="modal-title">New About</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -179,23 +177,23 @@
                         @if (session('error'))
                             <div class="alert alert-danger">{{ session('error') }}</div>
                         @endif
-                        <form action="{{ route('users.store') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('abouts.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
 
                                 <div class="col-sm-6">
                                     <div class="form-group">
 
-                                        <label for="name">Name</label>
-                                        <input class="form-control @error('name') is-invalid @enderror" type="text"
-                                               name="name" value="{{ old('name') }}" required>
+                                        <label for="title">Title</label>
+                                        <input class="form-control" type="text"
+                                               name="title" value="{{ old('title') }}" >
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <label for="email">E-Mail</label>
-                                        <input class="form-control @error('email') is-invalid @enderror" type="email"
-                                               name="email" value="{{ old('email') }}" required>
+                                        <label for="description">Description</label>
+                                        <input class="form-control @error('description') is-invalid @enderror" type="text"
+                                               name="description" value="{{ old('description') }}" required>
                                     </div>
                                 </div>
 
@@ -206,72 +204,40 @@
                                 <div class="col-sm-6">
 
                                     <div class="form-group">
-                                        <label for="role_id">Slogan</label>
-                                        <select class="select form-control @error('role_id') is-invalid @enderror"
-                                                name="role_id" type="role_id" required>
-                                            <option value="">-</option>
-                                            <option value="1" @if( old('role_id') == 1 ) selected @endif>Admin</option>
-                                            <option value="2" @if( old('role_id') == 2 ) selected @endif>User</option>
-                                        </select>
+                                        <label for="job">Job</label>
+                                        <input class="form-control @error('job') is-invalid @enderror" type="text"
+                                               name="job" value="{{ old('job') }}" required>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <label for="status_id">Status</label>
-                                        <select class="select form-control @error('status_id') is-invalid @enderror"
-                                                name="status_id" type="status_id" required>
-                                            <option value="">-</option>
-                                            <option value="1" @if( old('status_id') == 1 ) selected @endif>Active
-                                            </option>
-                                            <option value="2" @if( old('status_id') == 2 ) selected @endif>No Active
-                                            </option>
-                                        </select>
+                                        <label for="text">Text</label>
+                                        <textarea class="form-control @error('text') is-invalid @enderror" type="text"
+                                                  name="text"  required>{{ old('text') }}</textarea>
                                     </div>
                                 </div>
 
                             </div>
+
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <label for="password">Password</label>
-                                        <input class="form-control @error('password') is-invalid @enderror"
-                                               type="password"
-                                               name="password" value="{{ old('password') }}" required>
+                                        <label for="start_date">Start Date</label>
+                                        <input class="form-control @error('start_date') is-invalid @enderror"
+                                               type="date"
+                                               name="start_date" value="{{ old('start_date') }}" required>
                                     </div>
                                 </div>
 
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <label for="confirm_password">Confirm Password</label>
-                                        <input class="form-control @error('confirm_password') is-invalid @enderror"
-                                               type="password"
-                                               name="confirm_password" value="{{ old('confirm_password') }}" required>
+                                        <label for="end_date">End Date</label>
+                                        <input class="form-control @error('end_date') is-invalid @enderror"
+                                               type="date"
+                                               name="end_date" value="{{ old('end_date') }}" required>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div id="wrapper" class="col-sm-6">
-                                    <div class="form-group">
-                                        <label for="image">Image</label>
-                                        <input class="form-control @error('image') is-invalid @enderror"
-                                               type="file" accept="image/*" onchange="preview_image(event)" name="image"
-                                               value="{{ old('image') }}" required>
-                                    </div>
-                                </div>
-                                <div id="wrapper" class="col-sm-6">
-                                    <div class="form-group">
-                                        <label></label>
-                                        <div class="project-members">
-                                            <a data-placement="top" data-toggle="tooltip"
-                                               class="avatar">
-
-                                                <img id="image"/>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
                             <div class="submit-section">
                                 <button class="btn btn-primary submit-btn">Submit</button>
                             </div>

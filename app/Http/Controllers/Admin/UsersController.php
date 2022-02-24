@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 
 class UsersController extends Controller
 {
@@ -30,9 +31,19 @@ class UsersController extends Controller
 
     public function store(Request $request)
     {
+        if($request->hasFile('image')){
+            $request->validate([
+                'image'  => 'mimes:png,jpg,jpeg|max:3072',
+            ]);
+        }
         try {
+            if($request->hasFile('image')){
+                $imgName = Storage::putFile('public/userImage',$request->file('image'));
+            }else{
+                $imgName = NULL;
+            }
             $user = new User();
-            $user->image = $request->image;
+            $user->image = $imgName;
             $user->name = $request->name;
             $user->email = $request->email;
             $user->role_id = $request->role_id;
@@ -58,13 +69,45 @@ class UsersController extends Controller
     }
     public function edit(User $user)
     {
+        $user = User::where('id',$user->id)->first();
 
+        return view('users.edit',
+            [
+                'user' => $user
+            ]);
     }
 
 
     public function update(Request $request, User $user)
     {
+        if($request->hasFile('image')){
+            $request->validate([
+                'image'  => 'mimes:png,jpg,jpeg|max:3072',
+            ]);
+        }
+        try {
+            if($request->hasFile('image')){
+                $imgName = Storage::putFile('public/userImage',$request->file('image'));
+            }else{
+                $imgName = NULL;
+            }
+            $user->image = $imgName;
+            $user->name = $request->name;
+            $user->email = $request->email;
+            $user->role_id = $request->role_id;
+            $user->status_id = $request->status_id;
+            $user->password =Hash::make($request['password']);
+            $user->confirm_password = Hash::make($request['confirm_password']);
+            $user->save();
 
+            DB::commit();
+            return redirect(route('users.index'));
+
+        } catch (\Throwable $exception)
+        {
+            DB::rollBack();
+            return back()->with('Fail',$exception->getMessage());
+        }
     }
 
     public function destroy(User $user)
