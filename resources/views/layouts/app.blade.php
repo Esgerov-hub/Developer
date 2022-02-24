@@ -144,6 +144,10 @@
                         <a href="{{ route('services.index') }}"><i class="la la-server"></i> <span> Services</span></a>
 
                     </li>
+                    <li >
+                        <a href="{{ route('projects.index') }}"><i class="la la-project-diagram"></i> <span> Projects</span></a>
+
+                    </li>
                 </ul>
             </div>
         </div>

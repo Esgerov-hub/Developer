@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Pages;
 
 use App\Http\Controllers\Controller;
 use App\Models\About;
+use App\Models\Project;
 use App\Models\Service;
 use Illuminate\Http\Request;
 
@@ -11,16 +12,19 @@ class IndexController extends Controller
 {
     public function index()
     {
-        $services = Service::all();
+        $services = Service::orderBy('id','desc')->get();
+        $projects = Project::orderBy('id','desc')->get();
+
         return view('pages.index',
         [
-            'services' => $services
+            'services' => $services,
+            'projects' => $projects
         ]);
     }
 
     public function about()
     {
-        $abouts = About::all();
+        $abouts = About::orderBy('id','desc')->get();
 
         return view('pages.about',
         [
@@ -30,7 +34,7 @@ class IndexController extends Controller
 
     public function service()
     {
-        $services = Service::all();
+        $services = Service::orderBy('id','desc')->get();
         return view('pages.service',
         [
             'services' => $services
@@ -39,7 +43,11 @@ class IndexController extends Controller
 
     public function portfolio()
     {
-        return view('pages.portfolio');
+        $projects = Project::orderBy('id','desc')->get();
+        return view('pages.portfolio',
+        [
+            'projects' => $projects
+        ]);
     }
 
     public function contact()
