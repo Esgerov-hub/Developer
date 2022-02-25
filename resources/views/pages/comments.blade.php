@@ -19,7 +19,7 @@
         <!-- main css -->
         <link rel="stylesheet" href="{{ asset('pages/css/style.css') }}">
 
-        <title>About</title>
+        <title>Comment</title>
     </head>
 @endsection
 @section('pages.body')
@@ -49,50 +49,88 @@
                     <!-- row -->
                     <div class="row p-30-0">
 
+
                         <!-- col -->
-                        @foreach($abouts as $about)
-                        <div class="col-lg-6">
+                        <div class="col-lg-4">
+                            <!-- contact card -->
+                            <div class="art-a art-card">
+                                <div class="art-table p-15-15">
+                                    <ul>
+                                        <li>
+                                            <h6>Note:</h6>
+                                        </li>
+                                        <li>
+                                            <p>
+                                                Words must be written in English letters
+                                            </p>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- contact card end -->
+
+                        </div>
+                        <!-- col end -->
+
+                        <!-- col -->
+                        <div class="col-lg-12">
 
                             <!-- section title -->
                             <div class="art-section-title">
                                 <!-- title frame -->
                                 <div class="art-title-frame">
                                     <!-- title -->
-                                    <h4>{!! $about->title !!}</h4>
+                                    <h4>To Express Opinion</h4>
                                 </div>
                                 <!-- title frame end -->
                             </div>
                             <!-- section title end -->
 
-                            <!-- timeline -->
-                            <div class="art-timeline art-gallery">
-                                <div class="art-timeline-item">
-                                    <div class="art-timeline-mark-light"></div>
-                                    <div class="art-timeline-mark"></div>
+                            <!-- contact form frame -->
+                            <div class="art-a art-card">
 
-                                    <div class="art-a art-timeline-content">
-                                        <div class="art-card-header">
-                                            <div class="art-left-side">
-                                                <h5>{!! $about->description !!}</h5>
-                                                <div class="art-el-suptitle mb-15">{!! $about->job !!}</div>
-                                            </div>
-                                            <div class="art-right-side">
-                                                <span class="art-date">{{\Illuminate\Support\Carbon::parse($about->start_date)->format('M Y') }} - {{\Illuminate\Support\Carbon::parse($about->end_date)->format('M Y') }}</span>
-                                            </div>
-                                        </div>
+                                <!-- contact form -->
+                                <form  class="art-contact-form" action="{{ route('commentsPost') }}" method="POST">
+                                @csrf
+                                <!-- form field -->
 
-                                        <p>{!! $about->text !!}</p>
+                                    <div class="art-form-field">
+                                        <!-- name input -->
+                                        <input id="name" name="name" class="art-input" type="text" placeholder="Name" required>
+                                        <!-- label -->
+                                        <label for="name"><i class="fas fa-user"></i></label>
                                     </div>
-                                </div>
-
+                                    <!-- form field end -->
+                                    <!-- form field -->
+                                    <div class="art-form-field">
+                                        <!-- email input -->
+                                        <input id="work" name="work" class="art-input" type="text" placeholder="Work" required>
+                                        <!-- label -->
+                                        <label for="work"><i class="fas fa-business-time"></i></label>
+                                    </div>
+                                    <!-- form field end -->
+                                    <!-- form field -->
+                                    <div class="art-form-field">
+                                        <!-- message textarea -->
+                                        <textarea id="message" name="text" class="art-input" placeholder="Message" required></textarea>
+                                        <!-- label -->
+                                        <label for="message"><i class="far fa-envelope"></i></label>
+                                    </div>
+                                    <!-- form field end -->
+                                    <!-- button -->
+                                    <div class="art-submit-frame">
+                                        <button class="art-btn art-btn-md art-submit" type="submit"><span>Send comment</span></button>
+                                        <!-- success -->
+                                        <div class="art-success">Success <i class="fas fa-check"></i></div>
+                                    </div>
+                                </form>
+                                <!-- contact form end -->
 
                             </div>
-                            <!-- timeline end -->
+                            <!-- contact form frame end -->
 
                         </div>
-                    @endforeach
-
-
                         <!-- col end -->
 
                     </div>
@@ -101,9 +139,11 @@
                 </div>
                 <!-- container end -->
 
-
-
                 <!-- container -->
+
+                <!-- container end -->
+
+                <!-- footer -->
                 <div class="container-fluid">
 
                     <!-- footer -->
@@ -116,8 +156,7 @@
                     <!-- footer end -->
 
                 </div>
-                <!-- container end -->
-
+                <!-- footer end -->
 
             </div>
             <!-- scroll frame end -->
@@ -129,6 +168,8 @@
 @endsection
 
 @section('pages.js')
+
+
     <!-- jquery js -->
     <script src="{{ asset('pages/js/plugins/jquery.min.js') }}"></script>
     <!-- anime js -->

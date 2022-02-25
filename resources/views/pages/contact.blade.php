@@ -19,7 +19,7 @@
         <!-- main css -->
         <link rel="stylesheet" href="{{ asset('pages/css/style.css') }}">
 
-        <title>Arter</title>
+        <title>Contact</title>
     </head>
 @endsection
 @section('pages.body')
@@ -72,14 +72,37 @@
                                 <div class="art-table p-15-15">
                                     <ul>
                                         <li>
-                                            <h6>Country:</h6><span>Canada</span>
+                                            <h6>Country:</h6><span>Azerbaijan</span>
                                         </li>
                                         <li>
-                                            <h6>City:</h6><span>Toronto</span>
+                                            <h6>City:</h6><span>Khirdalan</span>
                                         </li>
 
                                         <li>
-                                            <h6>Streat:</h6><span>20 Dellbank Rd</span>
+                                            <h6>Address:</h6><span>Kristal Absheron One</span>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- contact card end -->
+                        </div>
+                        <!-- col end -->
+                        <!-- col -->
+                        <div class="col-lg-4">
+                            <!-- contact card -->
+                            <div class="art-a art-card">
+                                <div class="art-table p-15-15">
+                                    <ul>
+
+                                        <li>
+                                            <h6>LinkedIn:</h6><span>Ənvər Əsgərov</span>
+                                        </li>
+                                        <li>
+                                            <h6>Instagram:</h6><span>Enver_Esgerov_</span>
+                                        </li>
+                                        <li>
+                                            <h6>Facebook:</h6><span>Əsgərov Ənvər</span>
                                         </li>
                                     </ul>
                                 </div>
@@ -94,34 +117,13 @@
                                 <div class="art-table p-15-15">
                                     <ul>
                                         <li>
-                                            <h6>Email:</h6><span>carter.inbox@mail.com</span>
+                                            <h6>Contact:</h6><span>+994 50 702 70 93</span>
                                         </li>
                                         <li>
-                                            <h6>Telegram:</h6><span>@arter</span>
+                                            <h6>Whatsapp:</h6><span>+994 77 415 08 05</span>
                                         </li>
                                         <li>
-                                            <h6>Skype:</h6><span>Arter</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <!-- contact card end -->
-                        </div>
-                        <!-- col end -->
-                        <!-- col -->
-                        <div class="col-lg-4">
-                            <!-- contact card -->
-                            <div class="art-a art-card">
-                                <div class="art-table p-15-15">
-                                    <ul>
-                                        <li>
-                                            <h6>Support service:</h6><span>+78 (098) 333 11 22</span>
-                                        </li>
-                                        <li>
-                                            <h6>Office:</h6><span>+78 (098) 326 11 22</span>
-                                        </li>
-                                        <li>
-                                            <h6>Personal:</h6><span>+78 (077) 114 26 53</span>
+                                            <h6>Email:</h6><span>enver.esgerov0106@gmail.com</span>
                                         </li>
                                     </ul>
                                 </div>
@@ -149,7 +151,8 @@
                             <div class="art-a art-card">
 
                                 <!-- contact form -->
-                                <form id="form" class="art-contact-form">
+                                <form  class="art-contact-form" action="{{ route('contactPost') }}" method="POST">
+                                    @csrf
                                     <!-- form field -->
                                     <div class="art-form-field">
                                         <!-- name input -->
@@ -200,12 +203,18 @@
                 <!-- container end -->
 
                 <!-- footer -->
-                <footer>
-                    <!-- copyright -->
-                    <div>© 2020 Artur Carter</div>
-                    <!-- author ( Please! Do not delete it. You are awesome! :) -->
-                    <div>Template author:&#160; <a href="https://themeforest.net/user/millerdigitaldesign" target="_blank">Nazar Miller</a></div>
-                </footer>
+                <div class="container-fluid">
+
+                    <!-- footer -->
+                    <footer>
+                        <!-- copyright -->
+                        <div>© <?php echo date('d.m.Y')?> All rights reserved</div>
+                        <!-- author ( Please! Do not delete it. You are awesome! :) -->
+
+                    </footer>
+                    <!-- footer end -->
+
+                </div>
                 <!-- footer end -->
 
             </div>

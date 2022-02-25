@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\UsersController;
 use  App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\ProjectController;
+use App\Http\Controllers\Admin\SkillController;
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Pages\IndexController;
@@ -16,16 +17,19 @@ Route::get('/about',[IndexController::class,'about'])->name('about');
 
 Route::get('/service',[IndexController::class,'service'])->name('service');
 
-Route::get('/portfolio',[IndexController::class,'portfolio'])->name('portfolio');
+Route::get('/project',[IndexController::class,'portfolio'])->name('project');
 
 Route::get('/contact',[IndexController::class,'contact'])->name('contact');
+Route::post('/contactPost',[IndexController::class,'contactPost'])->name('contactPost');
 
-
+Route::get('/comment',[IndexController::class,'comments'])->name('comments');
+Route::post('/comment',[IndexController::class,'commentsPost'])->name('commentsPost');
 
 Route::resource('users',UsersController::class);
 Route::resource('abouts',AboutController::class);
 Route::resource('services',ServiceController::class);
 Route::resource('projects',ProjectController::class);
+Route::resource('skills',SkillController::class);
 
 Auth::routes();
 

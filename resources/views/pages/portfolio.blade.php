@@ -7,17 +7,17 @@
         <!-- color of address bar in mobile browser -->
         <meta name="theme-color" content="#2B2B35">
         <!-- favicon  -->
-        <link rel="shortcut icon" href="pages/img/thumbnail.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="{{asset("pages/img/thumbnail.ico")}}" type="image/x-icon">
         <!-- bootstrap css -->
-        <link rel="stylesheet" href="pages/css/plugins/bootstrap.min.css">
+        <link rel="stylesheet" href="{{asset("pages/css/plugins/bootstrap.min.css")}}">
         <!-- font awesome css -->
-        <link rel="stylesheet" href="pages/css/plugins/font-awesome.min.css">
+        <link rel="stylesheet" href="{{asset("pages/css/plugins/font-awesome.min.css")}}">
         <!-- swiper css -->
-        <link rel="stylesheet" href="pages/css/plugins/swiper.min.css">
+        <link rel="stylesheet" href="{{asset("pages/css/plugins/swiper.min.css")}}">
         <!-- fancybox css -->
-        <link rel="stylesheet" href="pages/css/plugins/fancybox.min.css">
+        <link rel="stylesheet" href="{{asset("pages/css/plugins/fancybox.min.css")}}">
         <!-- main css -->
-        <link rel="stylesheet" href="pages/css/style.css">
+        <link rel="stylesheet" href="{{asset("pages/css/style.css")}}">
 
         <title>Project</title>
     </head>
@@ -107,9 +107,9 @@
                     <!-- footer -->
                     <footer>
                         <!-- copyright -->
-                        <div>© 2020 Artur Carter</div>
+                        <div>© <?php echo date('d.m.Y')?> All rights reserved</div>
                         <!-- author ( Please! Do not delete it. You are awesome! :) -->
-                        <div>Template author:&#160; <a href="https://themeforest.net/user/millerdigitaldesign" target="_blank">Nazar Miller</a></div>
+
                     </footer>
                     <!-- footer end -->
 

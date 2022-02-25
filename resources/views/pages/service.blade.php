@@ -85,7 +85,8 @@
                     <!-- footer -->
                     <footer>
                         <!-- copyright -->
-                        <div>© 2020 Artur Carter</div>
+                        <div>© <?php echo date('d.m.Y')?> All rights reserved</div>
+                        <!-- author ( Please! Do not delete it. You are awesome! :) -->
 
                     </footer>
                     <!-- footer end -->

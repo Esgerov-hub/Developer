@@ -8,7 +8,7 @@
               content="admin, estimates, bootstrap, business, corporate, creative, management, minimal, modern, accounts, invoice, html5, responsive, CRM, Projects">
         <meta name="author" content="Dreamguys - Bootstrap Admin Template">
         <meta name="robots" content="noindex, nofollow">
-        <title>Projects</title>
+        <title>Skills</title>
 
         <!-- Favicon -->
         <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/img/favicon.png') }}">
@@ -51,14 +51,14 @@
             <div class="page-header">
                 <div class="row align-items-center">
                     <div class="col">
-                        <h3 class="page-title">Project</h3>
+                        <h3 class="page-title">Skills</h3>
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{ route('home') }}">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Project</li>
+                            <li class="breadcrumb-item active">Skills</li>
                         </ul>
                     </div>
                     <div class="col-auto float-right ml-auto">
-                        <a href="{{ route('projects.create') }}" class="btn add-btn" data-toggle="modal"
+                        <a href="{{ route('skills.create') }}" class="btn add-btn" data-toggle="modal"
                            data-target="#add_ticket">
                             <i class="fa fa-plus">
                             </i>Create</a>
@@ -71,7 +71,7 @@
                 <div class="col-sm-6 col-md-3 col-lg-3 col-xl-2 col-12">
                     <div class="form-group form-focus">
                         <input type="text" class="form-control floating">
-                        <label class="focus-label">Project Name</label>
+                        <label class="focus-label">Skill Name</label>
                     </div>
                 </div>
 
@@ -88,32 +88,43 @@
                             <thead>
                             <tr>
                                 <th>#</th>
+                                <th class="text-center">Status</th>
                                 <th>Title</th>
 
                                 <th class="text-right">Actions</th>
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($projects as $project)
+                            @foreach($skills as $skill)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
-                                    <td>
-                                        <h2 class="table-avatar">
-                                            <a class="avatar avatar-xs" href="profile.html"><img alt=""
-                                                                                                 src="{{asset( \Illuminate\Support\Facades\Storage::url($project->image)) }}"></a>
-                                            <a href="#">{{ $project->title }}</a>
-                                        </h2>
+                                    <td class="text-center">
+                                        <div class="dropdown action-label">
+                                            @if($skill->category_id == 'Language')
+                                            <a class="btn btn-white btn-sm btn-rounded"
+                                               data-toggle="dropdown" aria-expanded="false">
+                                                <i class="fa fa-dot-circle-o text-danger"></i>Language
+                                            </a>
+                                            @endif
+                                                @if($skill->category_id == 'Program')
+                                            <a class="btn btn-white btn-sm btn-rounded "
+                                               data-toggle="dropdown" aria-expanded="false">
+                                                <i class="fa fa-dot-circle-o text-info"></i>Program
+                                            </a>
+                                                    @endif
+                                        </div>
                                     </td>
+                                    <td>{{ $skill->title }}</td>
                                     <td class="text-right">
                                         <div class="dropdown dropdown-action">
                                             <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown"
                                                aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                             <div class="dropdown-menu dropdown-menu-right">
-                                                <a class="dropdown-item" href="{{ route('projects.edit',$project->id)  }}"
+                                                <a class="dropdown-item" href="{{ route('skills.edit',$skill->id)  }}"
                                                 ><i class="fa fa-pencil m-r-5"></i>
                                                     Edit</a>
 
-                                                <form method="POST" action="{{route('projects.destroy',$project->id)}}">
+                                                <form method="POST" action="{{route('skills.destroy',$skill->id)}}">
                                                     @method('DELETE')
                                                     @csrf
                                                     <button class="dropdown-item" type="submit" data-toggle="modal"
@@ -150,7 +161,7 @@
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">New User</h5>
+                        <h5 class="modal-title">New Skill</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -160,7 +171,7 @@
                         @if (session('error'))
                             <div class="alert alert-danger">{{ session('error') }}</div>
                         @endif
-                        <form action="{{ route('projects.store') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('skills.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
 
@@ -172,48 +183,33 @@
                                                name="title" value="{{ old('title') }}" required>
                                     </div>
                                 </div>
+
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <label for="url">Url</label>
-                                        <input class="form-control @error('url') is-invalid @enderror" type="text"
-                                               name="url" value="{{ old('url') }}" required>
+
+                                        <label for="number">Number</label>
+                                        <input class="form-control @error('number') is-invalid @enderror" type="number"
+                                               name="number" value="{{ old('number') }}" required>
                                     </div>
                                 </div>
-
                             </div>
 
                             <div class="row">
+
                                 <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label for="text">Password</label>
-                                        <textarea class="form-control @error('text') is-invalid @enderror"
-                                               type="text" name="text"  required>{{ old('text') }}</textarea>
-                                    </div>
-                                </div>
 
-                            </div>
-                            <div class="row">
-                                <div id="wrapper" class="col-sm-6">
                                     <div class="form-group">
-                                        <label for="image">Image</label>
-                                        <input class="form-control @error('image') is-invalid @enderror"
-                                               type="file" accept="image/*" onchange="preview_image(event)" name="image"
-                                               value="{{ old('image') }}" required>
-                                    </div>
-                                </div>
-                                <div id="wrapper" class="col-sm-6">
-                                    <div class="form-group">
-                                        <label></label>
-                                        <div class="project-members">
-                                            <a data-placement="top" data-toggle="tooltip"
-                                               class="avatar">
-
-                                                <img id="image"/>
-                                            </a>
-                                        </div>
+                                        <label for="role_id">Category</label>
+                                        <select class="select form-control @error('category_id') is-invalid @enderror"
+                                                name="category_id" type="role_id" required>
+                                            <option value="">-</option>
+                                            <option value="Language" @if( old('category_id') == 'Language' ) selected @endif>Language</option>
+                                            <option value="Program" @if( old('category_id') == 'Program' ) selected @endif>Program</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
+
 
                             <div class="submit-section">
                                 <button class="btn btn-primary submit-btn">Submit</button>

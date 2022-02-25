@@ -29,7 +29,7 @@
         <div class="art-curtain"></div>
 
         <!-- top background -->
-        <div class="art-top-bg" style="background-image: url(pages/img/bg.jpg)">
+        <div class="art-top-bg" style="background-image: url({{asset('pages/img/bg.jpg')}})">
             <!-- overlay -->
             <div class="art-top-bg-overlay"></div>
             <!-- overlay end -->
@@ -51,7 +51,7 @@
                         <div class="col-lg-12">
 
                             <!-- banner -->
-                            <div class="art-a art-banner" style="background-image: url(pages/img/bg.jpg)">
+                            <div class="art-a art-banner" style="background-image: url({{asset('pages/img/bg.jpg')}})">
                                 <!-- banner back -->
                                 <div class="art-banner-back"></div>
                                 <!-- banner dec -->
@@ -61,15 +61,15 @@
                                     <!-- main title -->
                                     <div class="art-banner-title">
                                         <!-- title -->
-                                        <h1 class="mb-15">Discover my Amazing <br>Art Space!</h1>
+                                        <h1 class="mb-15">Asgarov Anvar <br>Web Developer!</h1>
                                         <!-- suptitle -->
-                                        <div class="art-lg-text art-code mb-25">&lt;<i>code</i>&gt; I build <span
+                                        <div class="art-lg-text art-code mb-25">&lt;<i>code</i>&gt; I am <span
                                                 class="txt-rotate" data-period="2000"
-                                                data-rotate='[ "web interfaces.", "ios and android applications.", "design mocups.", "automation tools." ]'></span>&lt;/<i>code</i>&gt;
+                                                data-rotate='[ "web developer." ]'></span>&lt;/<i>code</i>&gt;
                                         </div>
                                         <div class="art-buttons-frame">
                                             <!-- button -->
-                                            <a href="portfolio-3-col-masonry.html" class="art-btn art-btn-md"><span>Explore now</span></a>
+                                            <a href="{{ route('comments') }}" class="art-btn art-btn-md"><span>Comment</span></a>
                                         </div>
                                     </div>
                                     <!-- main title end -->
@@ -121,11 +121,11 @@
                                 <!-- counter -->
                                 <div class="art-counter-box">
                                     <!-- counter number -->
-                                    <span class="art-counter">143</span>
+                                    <span class="art-counter">{{ $projects->count() }}</span>
                                 </div>
                                 <!-- counter end -->
                                 <!-- title -->
-                                <h6>Completed Projects</h6>
+                                <h6>Projects</h6>
                             </div>
                             <!-- couner frame end -->
 
@@ -140,11 +140,11 @@
                                 <!-- counter -->
                                 <div class="art-counter-box">
                                     <!-- counter number -->
-                                    <span class="art-counter">114</span>
+                                    <span class="art-counter">{{$comments->count()}}</span>
                                 </div>
                                 <!-- counter end -->
                                 <!-- title -->
-                                <h6>Happy Customers</h6>
+                                <h6>Comments</h6>
                             </div>
                             <!-- couner frame end -->
 
@@ -268,83 +268,32 @@
                                 <!-- slider wrapper -->
                                 <div class="swiper-wrapper">
                                     <!-- slide -->
-
+                                    @foreach($projects as $project)
                                         <div class="swiper-slide">
                                             <!-- service -->
-
                                             <div class="art-a art-service-icon-box">
                                                 <!-- service content -->
-                                                <a data-fancybox="gallery" href="pages/img/works/original-size/13.jpg" class="art-a art-portfolio-item-frame art-square">
+                                                <a data-fancybox="gallery" href="{{ asset( \Illuminate\Support\Facades\Storage::url($project->image)) }}" class="art-a art-portfolio-item-frame art-square">
                                                     <!-- img -->
-                                                    <img src="pages/img/works/thumbnail/13.jpg" alt="item">
+                                                    <img src="{{ asset( \Illuminate\Support\Facades\Storage::url($project->image)) }}" alt="item">
                                                     <!-- zoom icon -->
                                                     <span class="art-item-hover"><i class="fas fa-expand"></i></span>
                                                 </a>
                                                 <div class="art-service-ib-content">
                                                     <!-- title -->
-                                                    <h5 class="mb-15">Project title</h5>
-                                                    <div class="mb-15">Sit amet, consectetur adipisicing elit. Quas, architecto.</div>
+                                                    <h5 class="mb-15">{!! $project->title !!}</h5>
+                                                    <div class="mb-15">{!! $project->text !!}</div>
                                                     <!-- button -->
                                                     <div class="art-buttons-frame">
                                                         <!-- button -->
-                                                        <a href="{{ route('contact') }}" class="art-btn art-btn-md"><span>Contact</span></a>
+                                                        <a href=" {!! $project->url !!} " class="art-btn art-btn-md"><span>Read more</span></a>
                                                     </div>
                                                 </div>
                                                 <!-- service content end -->
                                             </div>
                                             <!-- service end -->
                                         </div>
-                                        <div class="swiper-slide">
-                                            <!-- service -->
-
-                                            <div class="art-a art-service-icon-box">
-                                                <!-- service content -->
-                                                <a data-fancybox="gallery" href="pages/img/works/original-size/13.jpg" class="art-a art-portfolio-item-frame art-square">
-                                                    <!-- img -->
-                                                    <img src="pages/img/works/thumbnail/13.jpg" alt="item">
-                                                    <!-- zoom icon -->
-                                                    <span class="art-item-hover"><i class="fas fa-expand"></i></span>
-                                                </a>
-                                                <div class="art-service-ib-content">
-                                                    <!-- title -->
-                                                    <h5 class="mb-15">Project title</h5>
-                                                    <div class="mb-15">Sit amet, consectetur adipisicing elit. Quas, architecto.</div>
-                                                    <!-- button -->
-                                                    <div class="art-buttons-frame">
-                                                        <!-- button -->
-                                                        <a href="{{ route('contact') }}" class="art-btn art-btn-md"><span>Contact</span></a>
-                                                    </div>
-                                                </div>
-                                                <!-- service content end -->
-                                            </div>
-                                            <!-- service end -->
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <!-- service -->
-
-                                            <div class="art-a art-service-icon-box">
-                                                <!-- service content -->
-                                                <a data-fancybox="gallery" href="pages/img/works/original-size/13.jpg" class="art-a art-portfolio-item-frame art-square">
-                                                    <!-- img -->
-                                                    <img src="pages/img/works/thumbnail/13.jpg" alt="item">
-                                                    <!-- zoom icon -->
-                                                    <span class="art-item-hover"><i class="fas fa-expand"></i></span>
-                                                </a>
-                                                <div class="art-service-ib-content">
-                                                    <!-- title -->
-                                                    <h5 class="mb-15">Project title</h5>
-                                                    <div class="mb-15">Sit amet, consectetur adipisicing elit. Quas, architecto.</div>
-                                                    <!-- button -->
-                                                    <div class="art-buttons-frame">
-                                                        <!-- button -->
-                                                        <a href="{{ route('contact') }}" class="art-btn art-btn-md"><span>Contact</span></a>
-                                                    </div>
-                                                </div>
-                                                <!-- service content end -->
-                                            </div>
-                                            <!-- service end -->
-                                        </div>
-
+                                @endforeach
                                 <!-- slide -->
                                 </div>
 
@@ -374,7 +323,7 @@
                                 <div class="art-title-frame">
                                     <!-- title -->
 
-                                    <h4>Rəy<a href="#"><i class="la la-file-text"></i></a></h4>
+                                    <h4>Comment<a href="#"><i class="la la-file-text"></i></a></h4>
                                 </div>
                                 <!-- title frame end -->
                             </div>
@@ -392,188 +341,34 @@
                                 <!-- slider wrapper -->
                                 <div class="swiper-wrapper">
                                     <!-- slide -->
+                                    @foreach($comments as $comment)
                                     <div class="swiper-slide">
 
                                         <!-- testimonial -->
                                         <div class="art-a art-testimonial">
                                             <!-- testimonial body -->
+
                                             <div class="testimonial-body">
                                                 <!-- photo -->
                                                 <img class="art-testimonial-face"
-                                                     src="pages/img/testimonials/face-1.jpg" alt="face">
+                                                     src="pages/img/users.png" alt="face">
                                                 <!-- name -->
-                                                <h5>Paul Trueman</h5>
-                                                <div class="art-el-suptitle mb-15">Template author</div>
+                                                <h5>{!! $comment->name !!}</h5>
+                                                <div class="art-el-suptitle mb-15">{!! $comment->work !!}</div>
                                                 <!-- text -->
-                                                <div class="mb-15">Working with Artur has been a pleasure. Better
-                                                    yet - I alerted them of a minor issue before going to sleep. The
-                                                    issue was fixed the next morning. I couldn't ask for better
-                                                    support. Thank you Artur!
-                                                    This is easily a 5 star freelancer.
+                                                <div class="mb-15">
+                                                    {!! $comment->text !!}
                                                 </div>
                                             </div>
                                             <!-- testimonial body end -->
-                                            <!-- testimonial footer -->
-                                            <div class="art-testimonial-footer">
-                                                <div class="art-left-side">
-                                                    <!-- star rate -->
-                                                    <ul class="art-star-rate">
-                                                        <li><i class="fas fa-star"></i></li>
-                                                        <li><i class="fas fa-star"></i></li>
-                                                        <li><i class="fas fa-star"></i></li>
-                                                        <li><i class="fas fa-star"></i></li>
-                                                        <li><i class="fas fa-star"></i></li>
-                                                    </ul>
-                                                    <!-- star rate end -->
-                                                </div>
-                                                <div class="art-right-side">
 
-                                                </div>
-                                            </div>
-                                            <!-- testimonial footer end -->
                                         </div>
                                         <!-- testimonial end -->
 
                                     </div>
                                     <!-- slide end -->
+                                    @endforeach
 
-                                    <!-- slide -->
-                                    <div class="swiper-slide">
-
-                                        <!-- testimonial -->
-                                        <div class="art-a art-testimonial">
-                                            <!-- testimonial body -->
-                                            <div class="testimonial-body">
-                                                <!-- photo -->
-                                                <img class="art-testimonial-face"
-                                                     src="pages/img/testimonials/face-2.jpg" alt="face">
-                                                <!-- name -->
-                                                <h5>Paul Trueman</h5>
-                                                <div class="art-el-suptitle mb-15">Template author</div>
-                                                <!-- text -->
-                                                <div class="mb-15">Working with Artur has been a pleasure. Better
-                                                    yet - I alerted them of a minor issue before going to sleep. The
-                                                    issue was fixed the next morning. I couldn't ask for better
-                                                    support. Thank you Artur!
-                                                    This is easily a 5 star freelancer.
-                                                </div>
-                                            </div>
-                                            <!-- testimonial body end -->
-                                            <!-- testimonial footer -->
-                                            <div class="art-testimonial-footer">
-                                                <div class="art-left-side">
-                                                    <!-- star rate -->
-                                                    <ul class="art-star-rate">
-                                                        <li><i class="fas fa-star"></i></li>
-                                                        <li><i class="fas fa-star"></i></li>
-                                                        <li><i class="fas fa-star"></i></li>
-                                                        <li><i class="fas fa-star"></i></li>
-                                                        <li class="art-empty-item"><i class="fas fa-star"></i></li>
-                                                    </ul>
-                                                    <!-- star rate end -->
-                                                </div>
-                                                <div class="art-right-side">
-
-                                                </div>
-                                            </div>
-                                            <!-- testimonial footer end -->
-                                        </div>
-                                        <!-- testimonial end -->
-
-                                    </div>
-                                    <!-- slide end -->
-
-                                    <!-- slide -->
-                                    <div class="swiper-slide">
-
-                                        <!-- testimonial -->
-                                        <div class="art-a art-testimonial">
-                                            <!-- testimonial body -->
-                                            <div class="testimonial-body">
-                                                <!-- photo -->
-                                                <img class="art-testimonial-face"
-                                                     src="pages/img/testimonials/face-3.jpg" alt="face">
-                                                <!-- name -->
-                                                <h5>Paul Trueman</h5>
-                                                <div class="art-el-suptitle mb-15">Template author</div>
-                                                <!-- text -->
-                                                <div class="mb-15">Working with Artur has been a pleasure. Better
-                                                    yet - I alerted them of a minor issue before going to sleep. The
-                                                    issue was fixed the next morning. I couldn't ask for better
-                                                    support. Thank you Artur!
-                                                    This is easily a 5 star freelancer.
-                                                </div>
-                                            </div>
-                                            <!-- testimonial body end -->
-                                            <!-- testimonial footer -->
-                                            <div class="art-testimonial-footer">
-                                                <div class="art-left-side">
-                                                    <!-- star rate -->
-                                                    <ul class="art-star-rate">
-                                                        <li><i class="fas fa-star"></i></li>
-                                                        <li><i class="fas fa-star"></i></li>
-                                                        <li><i class="fas fa-star"></i></li>
-                                                        <li><i class="fas fa-star"></i></li>
-                                                        <li><i class="fas fa-star"></i></li>
-                                                    </ul>
-                                                    <!-- star rate end -->
-                                                </div>
-                                                <div class="art-right-side">
-
-                                                </div>
-                                            </div>
-                                            <!-- testimonial footer end -->
-                                        </div>
-                                        <!-- testimonial end -->
-
-                                    </div>
-                                    <!-- slide end -->
-
-                                    <!-- slide -->
-                                    <div class="swiper-slide">
-
-                                        <!-- testimonial -->
-                                        <div class="art-a art-testimonial">
-                                            <!-- testimonial body -->
-                                            <div class="testimonial-body">
-                                                <!-- photo -->
-                                                <img class="art-testimonial-face"
-                                                     src="pages/img/testimonials/face-4.jpg" alt="face">
-                                                <!-- name -->
-                                                <h5>Paul Trueman</h5>
-                                                <div class="art-el-suptitle mb-15">Template author</div>
-                                                <!-- text -->
-                                                <div class="mb-15">Working with Artur has been a pleasure. Better
-                                                    yet - I alerted them of a minor issue before going to sleep. The
-                                                    issue was fixed the next morning. I couldn't ask for better
-                                                    support. Thank you Artur!
-                                                    This is easily a 5 star freelancer.
-                                                </div>
-                                            </div>
-                                            <!-- testimonial body end -->
-                                            <!-- testimonial footer -->
-                                            <div class="art-testimonial-footer">
-                                                <div class="art-left-side">
-                                                    <!-- star rate -->
-                                                    <ul class="art-star-rate">
-                                                        <li><i class="fas fa-star"></i></li>
-                                                        <li><i class="fas fa-star"></i></li>
-                                                        <li><i class="fas fa-star"></i></li>
-                                                        <li><i class="fas fa-star"></i></li>
-                                                        <li><i class="fas fa-star"></i></li>
-                                                    </ul>
-                                                    <!-- star rate end -->
-                                                </div>
-                                                <div class="art-right-side">
-
-                                                </div>
-                                            </div>
-                                            <!-- testimonial footer end -->
-                                        </div>
-                                        <!-- testimonial end -->
-
-                                    </div>
-                                    <!-- slide end -->
 
                                 </div>
                                 <!-- slider wrapper end -->
@@ -673,10 +468,9 @@
                     <!-- footer -->
                     <footer>
                         <!-- copyright -->
-                        <div>© 2020 Artur Carter</div>
+                        <div>© <?php echo date('d.m.Y')?> All rights reserved</div>
                         <!-- author ( Please! Do not delete it. You are awesome! :) -->
-                        <div>Template author:&#160; <a href="https://themeforest.net/user/millerdigitaldesign"
-                                                       target="_blank">Nazar Miller</a></div>
+
                     </footer>
                     <!-- footer end -->
 
@@ -694,26 +488,26 @@
 
 @section('pages.js')
     <!-- jquery js -->
-    <script src="pages/js/plugins/jquery.min.js"></script>
+    <script src="{{asset('pages/js/plugins/jquery.min.js')}}"></script>
     <!-- anime js -->
-    <script src="pages/js/plugins/anime.min.js"></script>
+    <script src="{{asset('pages/js/plugins/anime.min.js')}}"></script>
     <!-- swiper js -->
-    <script src="pages/js/plugins/swiper.min.js"></script>
+    <script src="{{asset('pages/js/plugins/swiper.min.js')}}"></script>
     <!-- progressbar js -->
-    <script src="pages/js/plugins/progressbar.min.js"></script>
+    <script src="{{asset('pages/js/plugins/progressbar.min.js')}}"></script>
     <!-- smooth scrollbar js -->
-    <script src="pages/js/plugins/smooth-scrollbar.min.js"></script>
+    <script src="{{asset('pages/js/plugins/smooth-scrollbar.min.js')}}"></script>
     <!-- overscroll js -->
-    <script src="pages/js/plugins/overscroll.min.js"></script>
+    <script src="{{asset('pages/js/plugins/overscroll.min.js')}}"></script>
     <!-- typing js -->
-    <script src="pages/js/plugins/typing.min.js"></script>
+    <script src="{{asset('pages/js/plugins/typing.min.js')}}"></script>
     <!-- isotope js -->
-    <script src="pages/js/plugins/isotope.min.js"></script>
+    <script src="{{asset('pages/js/plugins/isotope.min.js')}}"></script>
     <!-- fancybox js -->
-    <script src="pages/js/plugins/fancybox.min.js"></script>
+    <script src="{{asset('pages/js/plugins/fancybox.min.js')}}"></script>
     <!-- swup js -->
-    <script src="pages/js/plugins/swup.min.js"></script>
+    <script src="{{asset('pages/js/plugins/swup.min.js')}}"></script>
 
     <!-- main js -->
-    <script src="pages/js/main.js"></script>
+    <script src="{{asset('pages/js/main.js')}}"></script>
 @endsection

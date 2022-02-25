@@ -148,6 +148,10 @@
                         <a href="{{ route('projects.index') }}"><i class="la la-project-diagram"></i> <span> Projects</span></a>
 
                     </li>
+                    <li >
+                        <a href="{{ route('skills.index') }}"><i class="la la-folder-plus"></i> <span> Skills</span></a>
+
+                    </li>
                 </ul>
             </div>
         </div>

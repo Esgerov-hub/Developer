@@ -53,15 +53,24 @@
                         </div>
                         <!-- avatar end -->
                         <!-- name -->
-                        <h5 class="art-name mb-10"><a href="home.html">Asgarov Anvar</a></h5>
+                        <h5 class="art-name mb-10"><a href="{{ route('index') }}">Asgarov Anvar</a></h5>
                         <!-- post -->
                         <div class="art-sm-text">Back-End Developer <br>PHP,Laravel </div>
+                        <div class="art-links-frame p-15-15">
+
+                            <!-- download cv button -->
+                            <a href="pages/files/cv.txt" class="art-link" download><h7>Download cv</h7><i class="fas fa-download"></i></a>
+
+                        </div>
                     </div>
                     <!-- info bar header end -->
 
                     <!-- scroll frame -->
                     <div id="scrollbar2" class="art-scroll-frame">
 
+                        <!-- links frame -->
+
+                        <div class="art-ls-divider"></div>
                         <!-- info bar about -->
                         <div class="art-table p-15-15">
                             <!-- about text -->
@@ -86,6 +95,7 @@
                         <div class="art-ls-divider"></div>
 
                         <!-- language skills -->
+
                         <div class="art-lang-skills p-30-15">
 
                             <!-- skill -->
@@ -110,7 +120,6 @@
                                 <!-- title -->
                                 <h6>Spanish</h6>
                             </div>
-                            <!-- skill end -->
 
                         </div>
                         <!-- language skills end -->
@@ -216,15 +225,9 @@
                         <!-- knowledge list end -->
 
                         <!-- divider -->
-                        <div class="art-ls-divider"></div>
 
-                        <!-- links frame -->
-                        <div class="art-links-frame p-15-15">
 
-                            <!-- download cv button -->
-                            <a href="pages/files/cv.txt" class="art-link" download>Download cv <i class="fas fa-download"></i></a>
 
-                        </div>
                         <!-- links frame end -->
 
                     </div>
@@ -270,6 +273,8 @@
                         </a>
                         <!-- menu bar button end -->
                     </div>
+                    <!-- current page title -->
+
                     <div class="art-scroll-frame">
 
                         <!-- menu -->
@@ -277,19 +282,13 @@
                             <!-- menu list -->
                             <ul class="main-menu">
                                 <!-- menu item -->
-                                <li class="menu-item current-menu-item"><a href="{{ route('index') }}">Home</a></li>
+                                <li class="menu-item {{ Request::is('/*') ? 'current-menu-item' : '' }}"><a href="{{ route('index') }}">Home</a></li>
                                 <!-- menu item -->
-                                <li class="menu-item"><a href="{{ route('about') }}">About Us</a></li>
-                                <li class="menu-item"><a href="{{ route('service') }}" target="_blank">Service</a></li>
-                                <li class="menu-item "><a href="{{route('portfolio')}}">Portfolio</a></li>
-                                <li class="menu-item"><a href="{{ route('contact') }}">Contact</a></li>
-{{--                                <!-- menu item -->--}}
-{{--                                <li class="menu-item ">--}}
-{{--                                    <a href="#.">Blog</a>--}}
-{{--                                    <!-- sub menu end -->--}}
-{{--                                </li>--}}
-{{--                                <!-- menu item -->--}}
-{{--                                <li class="menu-item"><a href="onepage.html" target="_blank">Onepage</a></li>--}}
+                                <li class="menu-item {{ Request::is('about*') ? 'current-menu-item' : '' }}"><a href="{{ route('about') }}">About Us</a></li>
+                                <li class="menu-item {{ Request::is('service*') ? 'current-menu-item' : '' }}"><a href="{{ route('service') }}" target="_blank">Service</a></li>
+                                <li class="menu-item {{ Request::is('project*') ? 'current-menu-item' : '' }}"><a href="{{route('project')}}">Project</a></li>
+                                <li class="menu-item {{ Request::is('contact*') ? 'current-menu-item' : '' }}"><a href="{{ route('contact') }}">Contact</a></li>
+                                <li class="menu-item {{ Request::is('comment*') ? 'current-menu-item' : '' }}"><a href="{{ route('comments') }}">Comment</a></li>
                             </ul>
                             <!-- menu list end -->
                         </nav>
@@ -298,10 +297,10 @@
                         <!-- language change -->
                         <ul class="art-language-change">
                             <!-- language item -->
-                            <li><a href="#">EN</a></li>
+                            <li><a href="#">*</a></li>
                             <!-- language item -->
-                            <li class="art-active-lang"><a href="#">AZ</a></li>
-                            <li><a href="#">RU</a></li>
+                            <li class="art-active-lang"><a href="#">*</a></li>
+                            <li><a href="#">*</a></li>
                         </ul>
                         <!-- language change end -->
 
@@ -315,6 +314,7 @@
             <!-- menu bar end -->
 
 
+
         </div>
         <!-- app container end -->
 
@@ -326,8 +326,12 @@
         <!-- preloader content -->
         <div class="art-preloader-content">
             <!-- title -->
-            <h4>Anvar Asgar</h4>
+            <h5>Asgarov Anvar</h5>
             <!-- progressbar -->
+            <div class="art-preloader-load">
+                <p>Back-End Developer</p>
+            </div>
+
             <div id="preloader" class="art-preloader-load"></div>
         </div>
         <!-- preloader content end -->
