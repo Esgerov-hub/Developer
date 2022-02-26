@@ -69,8 +69,8 @@ class IndexController extends Controller
         Mail::send([], [],
 
             function ($message) use ($request) {
-                $message->from($request->email, $request->email);
-                $message->to('enver.esgerov0106@gmail.com');
+//                $message->from($request->email, $request->email);
+                $message->to('anvar@justech.academy');
                 $message->setBody(
                     "Soyad,Ad: " . $request->name .
                     "<br />E-Poçt: " . $request->email .
