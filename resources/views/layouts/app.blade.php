@@ -152,6 +152,10 @@
                         <a href="{{ route('skills.index') }}"><i class="la la-folder-plus"></i> <span> Skills</span></a>
 
                     </li>
+                    <li >
+                        <a href="{{ route('blogs.index') }}"><i class="la la-blog"></i> <span> Blogs</span></a>
+
+                    </li>
                 </ul>
             </div>
         </div>

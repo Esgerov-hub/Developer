@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="{{ asset('pages/css/plugins/bootstrap.min.css') }}">
         <!-- font awesome css -->
         <link rel="stylesheet" href="{{ asset('pages/css/plugins/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('pages/css/plugins/font-awesome.min.css') }}">
         <!-- swiper css -->
         <link rel="stylesheet" href="{{ asset('pages/css/plugins/swiper.min.css') }}">
         <!-- fancybox css -->
@@ -74,7 +75,7 @@
                                     </div>
                                     <!-- main title end -->
                                     <!-- photo -->
-                                    <img src="pages/img/face-2.png" class="art-banner-photo" alt="Your Name">
+{{--                                    <img src="pages/img/face-2.png" class="art-banner-photo" alt="Your Name">--}}
                                 </div>
                                 <!-- banner overlay end -->
                             </div>
@@ -106,7 +107,7 @@
                                 </div>
                                 <!-- counter end -->
                                 <!-- title -->
-                                <h6>Services</h6>
+                                <h6>Service</h6>
                             </div>
                             <!-- couner frame end -->
 
@@ -125,7 +126,7 @@
                                 </div>
                                 <!-- counter end -->
                                 <!-- title -->
-                                <h6>Projects</h6>
+                                <h6>Project</h6>
                             </div>
                             <!-- couner frame end -->
 
@@ -144,7 +145,7 @@
                                 </div>
                                 <!-- counter end -->
                                 <!-- title -->
-                                <h6>Comments</h6>
+                                <h6>Comment</h6>
                             </div>
                             <!-- couner frame end -->
 
@@ -159,11 +160,11 @@
                                 <!-- counter -->
                                 <div class="art-counter-box">
                                     <!-- counter number -->
-                                    <span class="art-counter">20</span><span class="art-counter-plus">+</span>
+                                    <span class="art-counter">{{$blogs->count()}}</span>
                                 </div>
                                 <!-- counter end -->
                                 <!-- title -->
-                                <h6>Honors and Awards</h6>
+                                <h6>Blog</h6>
                             </div>
                             <!-- couner frame end -->
 
@@ -273,21 +274,21 @@
                                             <!-- service -->
                                             <div class="art-a art-service-icon-box">
                                                 <!-- service content -->
-                                                <a data-fancybox="gallery" href="{{ asset( \Illuminate\Support\Facades\Storage::url($project->image)) }}" class="art-a art-portfolio-item-frame art-square">
+                                                <a href="{!! $project->url !!}" class="art-a art-portfolio-item-frame art-square">
                                                     <!-- img -->
                                                     <img src="{{ asset( \Illuminate\Support\Facades\Storage::url($project->image)) }}" alt="item">
                                                     <!-- zoom icon -->
-                                                    <span class="art-item-hover"><i class="fas fa-expand"></i></span>
+{{--                                                    <span class="art-item-hover"><i class="fas fa-expand"></i></span>--}}
                                                 </a>
                                                 <div class="art-service-ib-content">
                                                     <!-- title -->
                                                     <h5 class="mb-15">{!! $project->title !!}</h5>
                                                     <div class="mb-15">{!! $project->text !!}</div>
                                                     <!-- button -->
-                                                    <div class="art-buttons-frame">
-                                                        <!-- button -->
-                                                        <a href=" {!! $project->url !!} " class="art-btn art-btn-md"><span>Read more</span></a>
-                                                    </div>
+{{--                                                    <div class="art-buttons-frame">--}}
+{{--                                                        <!-- button -->--}}
+{{--                                                        <a href=" {!! $project->url !!} " class="art-btn art-btn-md"><span>Read more</span></a>--}}
+{{--                                                    </div>--}}
                                                 </div>
                                                 <!-- service content end -->
                                             </div>

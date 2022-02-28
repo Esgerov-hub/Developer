@@ -4,9 +4,11 @@ namespace App\Http\Controllers\Pages;
 
 use App\Http\Controllers\Controller;
 use App\Models\About;
+use App\Models\Blog;
 use App\Models\Comment;
 use App\Models\Project;
 use App\Models\Service;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -17,11 +19,13 @@ class IndexController extends Controller
         $services = Service::orderBy('id','desc')->get();
         $projects = Project::orderBy('id','desc')->get();
         $comments = Comment::orderBy('id','desc')->get();
+        $blogs = Blog::orderBy('id','desc')->get();
         return view('pages.index',
         [
             'services' => $services,
             'projects' => $projects,
-            'comments' => $comments
+            'comments' => $comments,
+            'blogs' => $blogs
         ]);
     }
 
@@ -97,5 +101,27 @@ class IndexController extends Controller
         $comment->text = $request->text;
         $comment->save();
         return redirect(route('comments'));
+    }
+
+    public function blog()
+    {
+        $blogs = Blog::orderBy('id','desc')->paginate(6);
+
+        return view('pages.blog',
+        [
+            'blogs' => $blogs
+        ]);
+    }
+
+    public function blogPost($title)
+    {
+        $blogs = User::join('blogs','users.id','=','blogs.user_id')->where('title',$title)->first();
+
+        $get_blogs = Blog::orderBy('id','desc')->get();
+        return view('pages.blog-post',
+        [
+            'blogs' => $blogs,
+            'get_blogs' => $get_blogs
+        ]);
     }
 }

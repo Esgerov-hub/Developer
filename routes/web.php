@@ -6,6 +6,7 @@ use  App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\SkillController;
+use App\Http\Controllers\Admin\BlogController;
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Pages\IndexController;
@@ -25,11 +26,15 @@ Route::post('/contactPost',[IndexController::class,'contactPost'])->name('contac
 Route::get('/comment',[IndexController::class,'comments'])->name('comments');
 Route::post('/comment',[IndexController::class,'commentsPost'])->name('commentsPost');
 
+Route::get('/blog',[IndexController::class,'blog'])->name('blog');
+Route::get('/blog/{title}',[IndexController::class,'blogPost'])->name('blogPost');
+
 Route::resource('users',UsersController::class);
 Route::resource('abouts',AboutController::class);
 Route::resource('services',ServiceController::class);
 Route::resource('projects',ProjectController::class);
 Route::resource('skills',SkillController::class);
+Route::resource('blogs',BlogController::class);
 
 Auth::routes();
 

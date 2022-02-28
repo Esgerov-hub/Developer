@@ -41,8 +41,8 @@
                     <div class="art-header">
                         <!-- avatar -->
                         <div class="art-avatar">
-                            <a data-fancybox="avatar" href="pages/img/face-1.jpg" class="art-avatar-curtain">
-                                <img src="pages/img/face-1.jpg" alt="avatar">
+                            <a data-fancybox="avatar" href="{{ asset('pages/img/enver.png') }}" class="art-avatar-curtain">
+                                <img src="{{ asset('pages/img/enver.png') }}" alt="avatar">
                                 <i class="fas fa-expand"></i>
                             </a>
                             <!-- available -->
@@ -55,11 +55,11 @@
                         <!-- name -->
                         <h5 class="art-name mb-10"><a href="{{ route('index') }}">Asgarov Anvar</a></h5>
                         <!-- post -->
-                        <div class="art-sm-text">Back-End Developer <br>PHP,Laravel </div>
+                        <div class="art-sm-text">Back-end Developer </div>
                         <div class="art-links-frame p-15-15">
 
                             <!-- download cv button -->
-                            <a href="pages/files/cv.txt" class="art-link" download><h7>Download cv</h7><i class="fas fa-download"></i></a>
+                            <a href="{{'https://resume.io/r/kO3omP43T'}}" class="art-link" download><h7>Download cv</h7><i class="fas fa-download"></i></a>
 
                         </div>
                     </div>
@@ -75,17 +75,11 @@
                         <div class="art-table p-15-15">
                             <!-- about text -->
                             <ul>
-                                <!-- country -->
                                 <li>
-                                    <h6>Residence:</h6><span>Azerbaijan</span>
+                                    <h6>Address:</h6><span>Azerbaijan\Baku</span>
                                 </li>
-                                <!-- city -->
                                 <li>
-                                    <h6>City:</h6><span>Baku</span>
-                                </li>
-                                <!-- age -->
-                                <li>
-                                    <h6>Age:</h6><span>21</span>
+                                    <h6>Telephone:</h6><span>+99450 702 7093</span>
                                 </li>
                             </ul>
                         </div>
@@ -102,7 +96,7 @@
                             <div class="art-lang-skills-item">
                                 <div id="circleprog1" class="art-cirkle-progress"></div>
                                 <!-- title -->
-                                <h6>French</h6>
+                                <h6>Azerbaijan</h6>
                             </div>
                             <!-- skill end -->
 
@@ -110,7 +104,7 @@
                             <div class="art-lang-skills-item">
                                 <div id="circleprog2" class="art-cirkle-progress"></div>
                                 <!-- title -->
-                                <h6>English</h6>
+                                <h6>Turkish</h6>
                             </div>
                             <!-- skill end -->
 
@@ -118,23 +112,23 @@
                             <div class="art-lang-skills-item">
                                 <div id="circleprog3" class="art-cirkle-progress"></div>
                                 <!-- title -->
-                                <h6>Spanish</h6>
+                                <h6>English</h6>
                             </div>
-
                         </div>
                         <!-- language skills end -->
 
                         <!-- divider -->
-                        <div class="art-ls-divider"></div>
+                        <div class="art-ls-divider">  </div>
 
                         <!-- hard skills -->
                         <div class="art-hard-skills p-30-15">
 
                             <!-- skill -->
+
                             <div class="art-hard-skills-item">
                                 <div class="art-skill-heading">
                                     <!-- title -->
-                                    <h6>html</h6>
+                                    <h6>PHP</h6>
                                 </div>
                                 <!-- progressbar frame -->
                                 <div class="art-line-progress">
@@ -149,7 +143,7 @@
                             <div class="art-hard-skills-item">
                                 <div class="art-skill-heading">
                                     <!-- title -->
-                                    <h6>CSS</h6>
+                                    <h6>Laravel</h6>
                                 </div>
                                 <!-- progressbar frame -->
                                 <div class="art-line-progress">
@@ -164,7 +158,7 @@
                             <div class="art-hard-skills-item">
                                 <div class="art-skill-heading">
                                     <!-- title -->
-                                    <h6>Js</h6>
+                                    <h6>MySQL</h6>
                                 </div>
                                 <!-- progressbar frame -->
                                 <div class="art-line-progress">
@@ -179,7 +173,7 @@
                             <div class="art-hard-skills-item">
                                 <div class="art-skill-heading">
                                     <!-- title -->
-                                    <h6>PHP</h6>
+                                    <h6>GIT</h6>
                                 </div>
                                 <!-- progressbar frame -->
                                 <div class="art-line-progress">
@@ -194,7 +188,7 @@
                             <div class="art-hard-skills-item">
                                 <div class="art-skill-heading">
                                     <!-- title -->
-                                    <h6>Wordpress</h6>
+                                    <h6>JSON</h6>
                                 </div>
                                 <!-- progressbar frame -->
                                 <div class="art-line-progress">
@@ -204,7 +198,48 @@
                                 <!-- progressbar frame end -->
                             </div>
                             <!-- skill end -->
-
+                            <!-- skill -->
+                            <div class="art-hard-skills-item">
+                                <div class="art-skill-heading">
+                                    <!-- title -->
+                                    <h6>AJAX</h6>
+                                </div>
+                                <!-- progressbar frame -->
+                                <div class="art-line-progress">
+                                    <!-- progressbar -->
+                                    <div id="lineprog6"></div>
+                                </div>
+                                <!-- progressbar frame end -->
+                            </div>
+                            <!-- skill end -->
+                            <!-- skill -->
+                            <div class="art-hard-skills-item">
+                                <div class="art-skill-heading">
+                                    <!-- title -->
+                                    <h6>C++</h6>
+                                </div>
+                                <!-- progressbar frame -->
+                                <div class="art-line-progress">
+                                    <!-- progressbar -->
+                                    <div id="lineprog7"></div>
+                                </div>
+                                <!-- progressbar frame end -->
+                            </div>
+                            <!-- skill end -->
+                            <!-- skill -->
+                            <div class="art-hard-skills-item">
+                                <div class="art-skill-heading">
+                                    <!-- title -->
+                                    <h6>API</h6>
+                                </div>
+                                <!-- progressbar frame -->
+                                <div class="art-line-progress">
+                                    <!-- progressbar -->
+                                    <div id="lineprog8"></div>
+                                </div>
+                                <!-- progressbar frame end -->
+                            </div>
+                            <!-- skill end -->
                         </div>
                         <!-- language skills end -->
 
@@ -214,13 +249,13 @@
                         <!-- knowledge list -->
                         <ul class="art-knowledge-list p-15-0">
                             <!-- list item -->
-                            <li>Bootstrap, Materialize</li>
+                            <li>Write Code</li>
                             <!-- list item -->
-                            <li>Stylus, Sass, Less</li>
+                            <li>Watch Film</li>
                             <!-- list item -->
-                            <li>Gulp, Webpack, Grunt</li>
+                            <li>Play Game</li>
                             <!-- list item -->
-                            <li>GIT knowledge</li>
+                            <li>Go for a walk</li>
                         </ul>
                         <!-- knowledge list end -->
 
@@ -236,15 +271,15 @@
                     <!-- sidebar social -->
                     <div class="art-ls-social">
                         <!-- social link -->
-                        <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="{{'https://www.linkedin.com/in/%C9%99nv%C9%99r-%C9%99sg%C9%99rov-43117b20a/'}}" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                         <!-- social link -->
-                        <a href="#" target="_blank"><i class="fab fa-dribbble"></i></a>
+                        <a href="{{'https://github.com/Esgerov-hub'}}" target="_blank"><i class="fab fa-github"></i></a>
                         <!-- social link -->
-                        <a href="#" target="_blank"><i class="fab fa-behance"></i></a>
+                        <a href="{{'https://www.facebook.com/eni.esgerov'}}" target="_blank"><i class="fab fa-facebook"></i></a>
                         <!-- social link -->
-                        <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="{{'https://t.me/Enver_655'}}" target="_blank"><i class="fab fa-telegram"></i></a>
                         <!-- social link -->
-                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="{{'https://www.instagram.com/enver_esgerov_/'}}" target="_blank"><i class="fab fa-instagram"></i></a>
                     </div>
                     <!-- sidebar social end -->
 
@@ -287,8 +322,9 @@
                                 <li class="menu-item {{ Request::is('about*') ? 'current-menu-item' : '' }}"><a href="{{ route('about') }}">About Us</a></li>
                                 <li class="menu-item {{ Request::is('service*') ? 'current-menu-item' : '' }}"><a href="{{ route('service') }}" target="_blank">Service</a></li>
                                 <li class="menu-item {{ Request::is('project*') ? 'current-menu-item' : '' }}"><a href="{{route('project')}}">Project</a></li>
-                                <li class="menu-item {{ Request::is('contact*') ? 'current-menu-item' : '' }}"><a href="{{ route('contact') }}">Contact</a></li>
+                                <li class="menu-item {{ Request::is('blog*') ? 'current-menu-item' : '' }}"><a href="{{ route('blog') }}">Blog</a></li>
                                 <li class="menu-item {{ Request::is('comment*') ? 'current-menu-item' : '' }}"><a href="{{ route('comments') }}">Comment</a></li>
+                                <li class="menu-item {{ Request::is('contact*') ? 'current-menu-item' : '' }}"><a href="{{ route('contact') }}">Contact</a></li>
                             </ul>
                             <!-- menu list end -->
                         </nav>
@@ -297,10 +333,10 @@
                         <!-- language change -->
                         <ul class="art-language-change">
                             <!-- language item -->
-                            <li><a href="#">*</a></li>
+                            <li class="art-active-lang"><a ></a></li>
                             <!-- language item -->
-                            <li class="art-active-lang"><a href="#">*</a></li>
-                            <li><a href="#">*</a></li>
+                            <li class="art-active-lang"><a ></a></li>
+                            <li class="art-active-lang"><a ></a></li>
                         </ul>
                         <!-- language change end -->
 
