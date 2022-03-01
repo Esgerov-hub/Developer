@@ -73,7 +73,7 @@
                 <ul>
 
                     <li >
-                        <a href="{{ route('home') }}"><i class="la la-dashboard"></i> <span> Dashboard</span></a>
+                        <a href="{{ route('home') }}"><i class="la la-comment"></i> <span> Comments</span></a>
 
                     </li>
 

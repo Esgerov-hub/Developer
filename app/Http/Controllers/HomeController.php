@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comment;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,7 +24,19 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('layouts.index');
+        $comments = Comment::all();
+        return view('layouts.index',
+            [
+                'comments' => $comments
+            ]);
+
+    }
+
+    public function delete($id)
+    {
+
+        Comment::where('id',$id)->delete();
+        return redirect(route('home'));
 
     }
 }
