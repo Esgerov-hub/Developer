@@ -74,7 +74,6 @@
                                             href="{{route('delete',$comment->id)}}" class="btn btn-danger">Delete</a>
                                     </td>
 
-
 {{--                                    <td class="text-right">--}}
 {{--                                        <div class="dropdown dropdown-action">--}}
 {{--                                            <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown"--}}
