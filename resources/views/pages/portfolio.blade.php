@@ -7,7 +7,7 @@
         <!-- color of address bar in mobile browser -->
         <meta name="theme-color" content="#2B2B35">
         <!-- favicon  -->
-        <link rel="shortcut icon" href="{{asset("pages/img/thumbnail.ico")}}" type="image/x-icon">
+        <link rel="shortcut icon" href="{{ asset('pages/img/ss.png') }}" type="image/x-icon">
         <!-- bootstrap css -->
         <link rel="stylesheet" href="{{asset("pages/css/plugins/bootstrap.min.css")}}">
         <!-- font awesome css -->

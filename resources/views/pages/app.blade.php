@@ -9,7 +9,7 @@
 <body>
 
 <!-- app -->
-<div class="art-app">
+<div class="art-app ">
 
     <!-- mobile top bar -->
     <div class="art-mobile-top-bar"></div>

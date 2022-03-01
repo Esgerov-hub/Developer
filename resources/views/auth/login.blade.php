@@ -10,7 +10,7 @@
     <title>Login</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="pages/img/ss.png">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -36,9 +36,9 @@
         <div class="container">
 
             <!-- Account Logo -->
-{{--            <div class="account-logo">--}}
-{{--                <a href="index.html"><img src="{{ asset('pages/img/enver.png') }}" alt="Dreamguy's Technologies"></a>--}}
-{{--            </div>--}}
+            <div class="account-logo">
+                <a href="{{ route('home') }}"><img src="{{ asset('pages/img/ss.png') }}" alt="Dreamguy's Technologies"></a>
+            </div>
             <!-- /Account Logo -->
 
             <div class="account-box">
@@ -58,11 +58,11 @@
                                 <div class="col">
                                     <label>Password</label>
                                 </div>
-                                <div class="col-auto">
-                                    <a class="text-muted" href="{{ route('password.request') }}">
-                                        Forgot password?
-                                    </a>
-                                </div>
+{{--                                <div class="col-auto">--}}
+{{--                                    <a class="text-muted" href="{{ route('password.request') }}">--}}
+{{--                                        Forgot password?--}}
+{{--                                    </a>--}}
+{{--                                </div>--}}
                             </div>
                             <input class="form-control" type="password" name="password">
                         </div>
