@@ -33,13 +33,13 @@
 <div class="main-wrapper">
 
     <div class="account-content">
-        <a href="job-list.html" class="btn btn-primary apply-btn">Apply Job</a>
+
         <div class="container">
 
             <!-- Account Logo -->
-            <div class="account-logo">
-                <a href="index.html"><img src="/assets/img/logo2.png" alt="Dreamguy's Technologies"></a>
-            </div>
+{{--            <div class="account-logo">--}}
+{{--                <a href="index.html"><img src="/assets/img/logo2.png" alt="Dreamguy's Technologies"></a>--}}
+{{--            </div>--}}
             <!-- /Account Logo -->
 
             <div class="account-box">
@@ -48,16 +48,35 @@
                     <p class="account-subtitle">Enter your email to get a password reset link</p>
 
                     <!-- Account Form -->
-                    <form>
+                    <form method="POST" action="{{ route('password.update') }}">
+                        @csrf
+
                         <div class="form-group">
-                            <label>Email Address</label>
-                            <input class="form-control" type="text">
+                            <label>E-Mail</label>
+                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ $email ?? old('email') }}" required autocomplete="email" autofocus>
+
+                            @error('email')
+                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                            @enderror
                         </div>
-                        <div class="form-group text-center">
-                            <button class="btn btn-primary account-btn" type="submit">Reset Password</button>
+                        <div class="form-group">
+                            <label>New password</label>
+                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+
+                            @error('password')
+                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                            @enderror
                         </div>
-                        <div class="account-footer">
-                            <p>Remember your password? <a href="login.html">Login</a></p>
+                        <div class="form-group">
+                            <label>Confirm password</label>
+                            <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                        </div>
+                        <div class="submit-section">
+                            <button class="btn btn-primary submit-btn">Update Password</button>
                         </div>
                     </form>
                     <!-- /Account Form -->

@@ -19,7 +19,7 @@
         <!-- main css -->
         <link rel="stylesheet" href="{{ asset('pages/css/style.css') }}">
 
-        <title>Blog Post</title>
+        <title>{!! $blogs->title !!}</title>
     </head>
 @endsection
 @section('pages.body')

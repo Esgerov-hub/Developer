@@ -7,7 +7,7 @@
     <meta name="keywords" content="admin, estimates, bootstrap, business, corporate, creative, management, minimal, modern, accounts, invoice, html5, responsive, CRM, Projects">
     <meta name="author" content="Dreamguys - Bootstrap Admin Template">
     <meta name="robots" content="noindex, nofollow">
-    <title>Login - HRMS admin template</title>
+    <title>Login</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
@@ -22,10 +22,10 @@
     <link rel="stylesheet" href="assets/css/style.css">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
+    <!--[if lt IE 9]-->
     <script src="assets/js/html5shiv.min.js"></script>
     <script src="assets/js/respond.min.js"></script>
-    <![endif]-->
+    <!--[endif]-->
 </head>
 <body class="account-page">
 
@@ -36,9 +36,9 @@
         <div class="container">
 
             <!-- Account Logo -->
-            <div class="account-logo">
-                <a href="index.html"><img src="assets/img/logo2.png" alt="Dreamguy's Technologies"></a>
-            </div>
+{{--            <div class="account-logo">--}}
+{{--                <a href="index.html"><img src="{{ asset('pages/img/enver.png') }}" alt="Dreamguy's Technologies"></a>--}}
+{{--            </div>--}}
             <!-- /Account Logo -->
 
             <div class="account-box">

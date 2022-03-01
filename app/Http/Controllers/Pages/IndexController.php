@@ -74,7 +74,7 @@ class IndexController extends Controller
 
             function ($message) use ($request) {
 //                $message->from($request->email, $request->email);
-                $message->to('anvar@justech.academy');
+                $message->to('anvarasgarov.dev@gmail.com');
                 $message->setBody(
                     "Soyad,Ad: " . $request->name .
                     "<br />E-Poçt: " . $request->email .

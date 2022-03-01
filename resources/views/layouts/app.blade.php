@@ -9,10 +9,12 @@
     <!-- Header -->
     <div class="header">
 
-        <!-- Logo -->
+{{--        <!-- Logo -->--}}
         <div class="header-left">
-            <a href="index.html" class="logo">
-                <img src="assets/img/logo.png" width="40" height="40" alt="">
+
+            <a href="{{ route('home') }}" class="logo">     {{ \Illuminate\Support\Facades\Auth::user()->name}}
+
+{{--                <img src="{{ asset('pages/img/enver.png') }}" width="40" height="40" alt="">--}}
             </a>
         </div>
         <!-- /Logo -->
@@ -30,72 +32,16 @@
 
         <!-- Header Menu -->
         <ul class="nav user-menu">
-            <!-- Flag -->
-            <li class="nav-item dropdown has-arrow flag-nav">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button">
-                    <img src="assets/img/flags/us.png" alt="" height="20"> <span>English</span>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right">
-                    <a href="javascript:void(0);" class="dropdown-item">
-                        <img src="assets/img/flags/us.png" alt="" height="16"> English
-                    </a>
-                    <a href="javascript:void(0);" class="dropdown-item">
-                        <img src="assets/img/flags/fr.png" alt="" height="16"> French
-                    </a>
-                    <a href="javascript:void(0);" class="dropdown-item">
-                        <img src="assets/img/flags/es.png" alt="" height="16"> Spanish
-                    </a>
-                    <a href="javascript:void(0);" class="dropdown-item">
-                        <img src="assets/img/flags/de.png" alt="" height="16"> German
-                    </a>
-                </div>
-            </li>
-            <!-- /Flag -->
-
-            <!-- Notifications -->
-            <li class="nav-item dropdown">
-                <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-                    <i class="fa fa-bell-o"></i> <span class="badge badge-pill">3</span>
-                </a>
-                <div class="dropdown-menu notifications">
-                    <div class="topnav-dropdown-header">
-                        <span class="notification-title">Notifications</span>
-                        <a href="javascript:void(0)" class="clear-noti"> Clear All </a>
-                    </div>
-                    <div class="noti-content">
-                        <ul class="notification-list">
-                            <li class="notification-message">
-                                <a href="activities.html">
-                                    <div class="media">
-												<span class="avatar">
-													<img alt="" src="assets/img/profiles/avatar-02.jpg">
-												</span>
-                                        <div class="media-body">
-                                            <p class="noti-details"><span class="noti-title">John Doe</span> added new task <span class="noti-title">Patient appointment booking</span></p>
-                                            <p class="noti-time"><span class="notification-time">4 mins ago</span></p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-
-                        </ul>
-                    </div>
-                    <div class="topnav-dropdown-footer">
-                        <a href="activities.html">View all Notifications</a>
-                    </div>
-                </div>
-            </li>
-            <!-- /Notifications -->
 
             <li class="nav-item dropdown has-arrow main-drop">
                 <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-							<span class="user-img"><img src="assets/img/profiles/avatar-21.jpg" alt="">
+							<span class="user-img"><img src="{{ asset('pages/img/enver.png') }}" alt="">
 							<span class="status online"></span></span>
-                    <span>Soeng Souy</span>
+                    <span>{{ \Illuminate\Support\Facades\Auth::user()->name}}</span>
                 </a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="profile.html">My Profile</a>
-                    <a class="dropdown-item" href="settings.html">Settings</a>
+{{--                    <a class="dropdown-item" href="profile.html">My Profile</a>--}}
+{{--                    <a class="dropdown-item" href="settings.html">Settings</a>--}}
                     <form action="{{ route('logout') }}" method="POST">
                         @csrf
                         <button class="dropdown-item" type="submit">Logout</button>
@@ -110,8 +56,8 @@
         <div class="dropdown mobile-user-menu">
             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
             <div class="dropdown-menu dropdown-menu-right">
-                <a class="dropdown-item" href="profile.html">My Profile</a>
-                <a class="dropdown-item" href="settings.html">Settings</a>
+{{--                <a class="dropdown-item" href="profile.html">My Profile</a>--}}
+{{--                <a class="dropdown-item" href="settings.html">Settings</a>--}}
                 <a class="dropdown-item" href="{{ route('logout') }}">Logout</a>
             </div>
         </div>
