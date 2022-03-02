@@ -123,7 +123,7 @@
                                             <h6>Whatsapp:</h6><span>+994 77 415 08 05</span>
                                         </li>
                                         <li>
-                                            <h6>Email:</h6><span>anvarasgarov.dev@gmail.com</span>
+                                            <h6>Email:</h6><span>anvarasgarov.dev@anvarasgarov.dev</span>
                                         </li>
                                     </ul>
                                 </div>
