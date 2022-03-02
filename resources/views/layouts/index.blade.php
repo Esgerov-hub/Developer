@@ -74,34 +74,6 @@
                                             href="{{route('delete',$comment->id)}}" class="btn btn-danger">Delete</a>
                                     </td>
 
-{{--                                    <td class="text-right">--}}
-{{--                                        <div class="dropdown dropdown-action">--}}
-{{--                                            <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown"--}}
-{{--                                               aria-expanded="false"><i class="material-icons">more_vert</i></a>--}}
-{{--                                            <div class="dropdown-menu dropdown-menu-right">--}}
-
-{{--                                                <form method="POST" action="{{route('delete',$comment->id)}}">--}}
-{{--                                                    @method('DELETE')--}}
-{{--                                                    @csrf--}}
-{{--                                                    <button class="dropdown-item" type="submit" data-toggle="modal"--}}
-{{--                                                            data-target="#delete_ticket">--}}
-{{--                                                        <i class="fa fa-trash-o m-r-5"></i>--}}
-{{--                                                        Delete--}}
-
-
-{{--                                                    </button>--}}
-{{--                                                </form>--}}
-{{--                                                --}}{{--                                                <form action="{{ route('users.destroy',$user->id) }}" method="POST">--}}
-{{--                                                --}}{{--                                                    @csrf--}}
-{{--                                                --}}{{--                                                    <a class="dropdown-item"--}}
-{{--                                                --}}{{--                                                       href="{{ route('users.destroy',$user->id) }}" data-toggle="modal"--}}
-{{--                                                --}}{{--                                                       data-target="#delete_ticket"><i class="fa fa-trash-o m-r-5"></i>--}}
-{{--                                                --}}{{--                                                        Delete</a>--}}
-{{--                                                --}}{{--                                                </form>--}}
-
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                    </td>--}}
                                 </tr>
                             @endforeach
                             </tbody>
