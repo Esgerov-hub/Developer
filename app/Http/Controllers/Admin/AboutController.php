@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Storage;
 class AboutController extends Controller
 {
 
+
     public function index()
     {
         $abouts = About::orderBy('id','desc')->get();
