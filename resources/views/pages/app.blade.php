@@ -240,6 +240,48 @@
                                 <!-- progressbar frame end -->
                             </div>
                             <!-- skill end -->
+                            <!-- skill -->
+                            <div class="art-hard-skills-item">
+                                <div class="art-skill-heading">
+                                    <!-- title -->
+                                    <h6>HTML</h6>
+                                </div>
+                                <!-- progressbar frame -->
+                                <div class="art-line-progress">
+                                    <!-- progressbar -->
+                                    <div id="lineprog9"></div>
+                                </div>
+                                <!-- progressbar frame end -->
+                            </div>
+                            <!-- skill end -->
+                            <!-- skill -->
+                            <div class="art-hard-skills-item">
+                                <div class="art-skill-heading">
+                                    <!-- title -->
+                                    <h6>CSS</h6>
+                                </div>
+                                <!-- progressbar frame -->
+                                <div class="art-line-progress">
+                                    <!-- progressbar -->
+                                    <div id="lineprog10"></div>
+                                </div>
+                                <!-- progressbar frame end -->
+                            </div>
+                            <!-- skill end -->
+                            <!-- skill -->
+                            <div class="art-hard-skills-item">
+                                <div class="art-skill-heading">
+                                    <!-- title -->
+                                    <h6>Laravel Nova</h6>
+                                </div>
+                                <!-- progressbar frame -->
+                                <div class="art-line-progress">
+                                    <!-- progressbar -->
+                                    <div id="lineprog11"></div>
+                                </div>
+                                <!-- progressbar frame end -->
+                            </div>
+                            <!-- skill end -->
                         </div>
                         <!-- language skills end -->
 
@@ -319,7 +361,7 @@
                                 <!-- menu item -->
                                 <li class="menu-item {{ Request::is('/*') ? 'current-menu-item' : '' }}"><a href="{{ route('index') }}">Home</a></li>
                                 <!-- menu item -->
-                                <li class="menu-item {{ Request::is('about*') ? 'current-menu-item' : '' }}"><a href="{{ route('about') }}">About Us</a></li>
+                                <li class="menu-item {{ Request::is('about*') ? 'current-menu-item' : '' }}"><a href="{{ route('about') }}">About</a></li>
                                 <li class="menu-item {{ Request::is('service*') ? 'current-menu-item' : '' }}"><a href="{{ route('service') }}" target="_blank">Service</a></li>
                                 <li class="menu-item {{ Request::is('project*') ? 'current-menu-item' : '' }}"><a href="{{route('project')}}">Project</a></li>
                                 <li class="menu-item {{ Request::is('blog*') ? 'current-menu-item' : '' }}"><a href="{{ route('blog') }}">Blog</a></li>

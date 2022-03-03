@@ -292,6 +292,56 @@ $(function () {
     });
 
     bar.animate(.40);
+
+    var bar = new ProgressBar.Line(lineprog9, {
+        strokeWidth: 1.72,
+        easing: 'easeInOut',
+        duration: 1400,
+        delay: 3200,
+        trailWidth: 1.72,
+        svgStyle: {
+            width: '100%',
+            height: '100%'
+        },
+        step: (state, bar) => {
+            bar.setText(Math.round(bar.value() * 100) + ' %');
+        }
+    });
+
+    bar.animate(.50);
+
+    var bar = new ProgressBar.Line(lineprog10, {
+        strokeWidth: 1.72,
+        easing: 'easeInOut',
+        duration: 1400,
+        delay: 3200,
+        trailWidth: 1.72,
+        svgStyle: {
+            width: '100%',
+            height: '100%'
+        },
+        step: (state, bar) => {
+            bar.setText(Math.round(bar.value() * 100) + ' %');
+        }
+    });
+
+    bar.animate(.50);
+    var bar = new ProgressBar.Line(lineprog11, {
+        strokeWidth: 1.72,
+        easing: 'easeInOut',
+        duration: 1400,
+        delay: 3200,
+        trailWidth: 1.72,
+        svgStyle: {
+            width: '100%',
+            height: '100%'
+        },
+        step: (state, bar) => {
+            bar.setText(Math.round(bar.value() * 100) + ' %');
+        }
+    });
+
+    bar.animate(.50);
     // Contact form
     $('.art-input').keyup(function () {
         if ($(this).val()) {
@@ -740,37 +790,37 @@ $(function () {
     demo
 
     ------------------------------------------- */
-    var demo = '<style>.color-change{top: 30vh; right: -50px; padding: 5px 5px 0; background-color: rgba(250,250,252,1); position: fixed; z-index: 99999999999999999999999999999999; border-radius: 0 0 2px 0; -webkit-transition: .3s ease-in-out; transition: .3s ease-in-out;}.active-changer{right: 0;}.swapColor{height: 40px; width: 40px; display: block; margin-bottom: 5px; border-radius: 1px; filter: brightness(100%); -webkit-transition: .3s ease-in-out; transition: .3s ease-in-out;}.swapColor:hover{filter: brightness(110%);}.swapOverlay{height: 40px; width: 40px; display: block; margin-bottom: 10px; border-radius: 1px;}.green{background-color: #4CAF50;}.red{background-color: #f44336;}.blue{background-color: #64B5F6;}.orange{background-color: #FFC107;}.open-changer{cursor: pointer; position: absolute; background-color: rgba(250,250,252,1); height: 40px; width: 40px; top: 0; left: -40px; color: rgba(32,32,42,1); display: flex; justify-content: center;}.open-changer i{align-self: center; animation: rotate 2s infinite linear;}@keyframes rotate{0%{transform: rotate(0);}100%{transform: rotate(360deg);}}.demo-card{width: 100%;}.demo-frame{margin: 0;}@media (max-width: 768px){.demo-frame{margin-left: -15px; margin-right: -15px;}}</style> <div class="color-change"> <div class="open-changer"><i class="fas fa-cog"></i></div><a href="javascript:void(0)" class="swapColor orange" data-theme="orange"></a> <a href="javascript:void(0)" class="swapColor red" data-theme="red"></a> <a href="javascript:void(0)" class="swapColor green" data-theme="green"></a> <a href="javascript:void(0)" class="swapColor blue" data-theme="blue"></a></div>';
-
-    $('body').prepend(demo);
-
-    var sheets = {
-        orange: $('<link rel="stylesheet" href="page/css/color-1.css">'),
-        red: $('<link rel="stylesheet" href="page/css/color-2.css">'),
-        green: $('<link rel="stylesheet" href="page/css/color-3.css">'),
-        blue: $('<link rel="stylesheet" href="css/color-4.css">'),
-        grey: $('<link rel="stylesheet" href="css/color-4.css">'),
-    };
-
-    var sheets2 = {
-        blueoverlay: $('<link rel="stylesheet" href="css/overlay-color/blue.css">'),
-        violetoverlay: $('<link rel="stylesheet" href="css/overlay-color/violet.css">'),
-    };
-
-    var currentSheet = sheets.orange.appendTo($("head"));
-
-    $("a.swapColor").click(function () {
-        currentSheet.detach();
-        currentSheet = (sheets[$(this).attr("data-theme")]).appendTo($("head"));
-    });
-
-    $('.open-changer').click(function () {
-        $('.color-change').toggleClass("active-changer");
-    });
-
-    $('.art-app').click(function () {
-        $('.color-change').removeClass("active-changer");
-    });
+    // var demo = '<style>.color-change{top: 30vh; right: -50px; padding: 5px 5px 0; background-color: rgba(250,250,252,1); position: fixed; z-index: 99999999999999999999999999999999; border-radius: 0 0 2px 0; -webkit-transition: .3s ease-in-out; transition: .3s ease-in-out;}.active-changer{right: 0;}.swapColor{height: 40px; width: 40px; display: block; margin-bottom: 5px; border-radius: 1px; filter: brightness(100%); -webkit-transition: .3s ease-in-out; transition: .3s ease-in-out;}.swapColor:hover{filter: brightness(110%);}.swapOverlay{height: 40px; width: 40px; display: block; margin-bottom: 10px; border-radius: 1px;}.green{background-color: #4CAF50;}.red{background-color: #f44336;}.blue{background-color: #64B5F6;}.orange{background-color: #FFC107;}.open-changer{cursor: pointer; position: absolute; background-color: rgba(250,250,252,1); height: 40px; width: 40px; top: 0; left: -40px; color: rgba(32,32,42,1); display: flex; justify-content: center;}.open-changer i{align-self: center; animation: rotate 2s infinite linear;}@keyframes rotate{0%{transform: rotate(0);}100%{transform: rotate(360deg);}}.demo-card{width: 100%;}.demo-frame{margin: 0;}@media (max-width: 768px){.demo-frame{margin-left: -15px; margin-right: -15px;}}</style> <div class="color-change"> <div class="open-changer"><i class="fas fa-cog"></i></div><a href="javascript:void(0)" class="swapColor orange" data-theme="orange"></a> <a href="javascript:void(0)" class="swapColor red" data-theme="red"></a> <a href="javascript:void(0)" class="swapColor green" data-theme="green"></a> <a href="javascript:void(0)" class="swapColor blue" data-theme="blue"></a></div>';
+    //
+    // $('body').prepend(demo);
+    //
+    // var sheets = {
+    //     orange: $('<link rel="stylesheet" href="page/css/color-1.css">'),
+    //     red: $('<link rel="stylesheet" href="page/css/color-2.css">'),
+    //     green: $('<link rel="stylesheet" href="page/css/color-3.css">'),
+    //     blue: $('<link rel="stylesheet" href="css/color-4.css">'),
+    //     grey: $('<link rel="stylesheet" href="css/color-4.css">'),
+    // };
+    //
+    // var sheets2 = {
+    //     blueoverlay: $('<link rel="stylesheet" href="css/overlay-color/blue.css">'),
+    //     violetoverlay: $('<link rel="stylesheet" href="css/overlay-color/violet.css">'),
+    // };
+    //
+    // var currentSheet = sheets.orange.appendTo($("head"));
+    //
+    // $("a.swapColor").click(function () {
+    //     currentSheet.detach();
+    //     currentSheet = (sheets[$(this).attr("data-theme")]).appendTo($("head"));
+    // });
+    //
+    // $('.open-changer').click(function () {
+    //     $('.color-change').toggleClass("active-changer");
+    // });
+    //
+    // $('.art-app').click(function () {
+    //     $('.color-change').removeClass("active-changer");
+    // });
 
     /* -------------------------------------------
 
