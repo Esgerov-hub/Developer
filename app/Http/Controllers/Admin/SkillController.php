@@ -8,7 +8,10 @@ use Illuminate\Http\Request;
 
 class SkillController extends Controller
 {
-
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
         $skills = Skill::orderBy('id','desc')->get();

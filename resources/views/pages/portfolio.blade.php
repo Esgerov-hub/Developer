@@ -70,11 +70,11 @@
                             @foreach($projects as $project)
                             <div class="art-grid-item">
                                 <!-- grid item frame -->
-                                <a data-fancybox="gallery" href="{{ asset( \Illuminate\Support\Facades\Storage::url($project->image)) }}" class="art-a art-portfolio-item-frame art-square">
+                                <a  href="{!! $project->url !!}" class="art-a art-portfolio-item-frame art-square">
                                     <!-- img -->
-                                    <img src="{{ asset( \Illuminate\Support\Facades\Storage::url($project->image)) }}" alt="item">
+                                    <img src="{{ asset( \Illuminate\Support\Facades\Storage::url($project->image)) }}" alt="item" >
                                     <!-- zoom icon -->
-                                    <span class="art-item-hover"><i class="fas fa-expand"></i></span>
+
                                 </a>
                                 <!-- grid item frame end -->
                                 <!-- description -->
