@@ -104,7 +104,12 @@
                                         <li>
                                             <h6>Author:</h6><span>{!! $blogs->name !!}</span>
                                         </li>
-
+{{--                                        <li>--}}
+{{--                                            <h6>Count:</h6>--}}
+{{--                                            @foreach($get_blogs as $blog)--}}
+{{--                                            <span>{{ $loop->count }}</span>--}}
+{{--                                                @endforeach--}}
+{{--                                        </li>--}}
                                     </ul>
                                 </div>
                                 <!-- table end -->

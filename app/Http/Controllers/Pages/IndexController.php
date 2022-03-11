@@ -9,6 +9,7 @@ use App\Models\Comment;
 use App\Models\Project;
 use App\Models\Service;
 use App\Models\User;
+use App\Models\BlogCount;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -107,11 +108,20 @@ class IndexController extends Controller
     {
         $blogs = Blog::orderBy('id','desc')->paginate(6);
 
+        if (date('h') )
+        {
+            $blogCount = new BlogCount;
+            $blogCount->blog_id = '1';
+            $blogCount->save();
+        }
+
+
         return view('pages.blog',
         [
             'blogs' => $blogs
         ]);
     }
+
 
     public function blogPost($title)
     {
@@ -121,7 +131,16 @@ class IndexController extends Controller
         return view('pages.blog-post',
         [
             'blogs' => $blogs,
-            'get_blogs' => $get_blogs
+            'get_blogs' => $get_blogs,
+
         ]);
+    }
+
+    public function blogCountPost(Request $request)
+    {
+
+
+        return redirect(route('blog-post'));
+
     }
 }

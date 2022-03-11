@@ -86,7 +86,9 @@
                                     <!-- post description -->
                                     <div class="art-post-description">
                                         <!-- title -->
+
                                         <a href="{{ route('blogPost',$blog->title) }}">
+
                                             <h5 class="mb-15">{!! $blog->title !!}</h5>
                                         </a>
                                         <!-- text -->
@@ -94,6 +96,7 @@
                                     <!-- link -->
                                         <a href="{{ route('blogPost',$blog->title) }}" class="art-link art-color-link art-w-chevron">Read
                                             more</a>
+
                                     </div>
                                     <!-- post description end -->
                                 </div>

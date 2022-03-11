@@ -81,7 +81,7 @@
                                 <div class="art-item-description">
                                     <!-- title -->
                                     <h5 class="mb-15">{!! $project->title !!}</h5>
-                                    <div class="mb-15">{!! $project->text !!}</div>
+                                    <div class="mb-15"> {!! $project->text !!}</div>
                                     <!-- button -->
                                     <a href="{!! $project->url !!}" class="art-link art-color-link art-w-chevron">Read more</a>
                                 </div>
