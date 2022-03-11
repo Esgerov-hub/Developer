@@ -104,7 +104,9 @@
                                         <li>
                                             <h6>Author:</h6><span>{!! $blogs->name !!}</span>
                                         </li>
-
+                                        <li>
+                                            <h6>Reads:</h6><span>{!! $blogs->reads !!}</span>
+                                        </li>
                                     </ul>
                                 </div>
                                 <!-- table end -->

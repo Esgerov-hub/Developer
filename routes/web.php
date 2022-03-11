@@ -11,7 +11,6 @@ use App\Http\Controllers\Admin\BlogController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Pages\IndexController;
 
-
 Route::get('/',[IndexController::class,'index'])->name('index');
 
 Route::get('/about',[IndexController::class,'about'])->name('about');
