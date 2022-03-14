@@ -96,13 +96,17 @@
                                     <ul>
 
                                         <li>
-                                            <h6>LinkedIn:</h6><span>Ənvər Əsgərov</span>
+                                            <h6>LinkedIn:</h6><span>
+                                                <a href="#">Ənvər Əsgərov</a></span>
+                                        </li>
+                                        <li >
+
+                                            <h6>Instagram:</h6><span>
+                                                <a href="#">anvarasgarov.dev</a></span>
                                         </li>
                                         <li>
-                                            <h6>Instagram:</h6><span>Enver_Esgerov_</span>
-                                        </li>
-                                        <li>
-                                            <h6>Facebook:</h6><span>Əsgərov Ənvər</span>
+                                            <h6>Facebook:</h6><span>
+                                                <a href="#">Əsgərov Ənvər</a></span>
                                         </li>
                                     </ul>
                                 </div>
@@ -123,7 +127,7 @@
                                             <h6>Whatsapp:</h6><span>+994 77 415 08 05</span>
                                         </li>
                                         <li>
-                                            <h6>Email:</h6><span>anvarasgarov.dev@anvarasgarov.dev</span>
+                                            <h6>Email:</h6><span>enver.esgerov0106@gmail.com</span>
                                         </li>
                                     </ul>
                                 </div>
@@ -208,7 +212,7 @@
                     <!-- footer -->
                     <footer>
                         <!-- copyright -->
-                        <div>© <?php echo date('d.m.Y')?> All rights reserved</div>
+                        <div>© <?php echo date('Y')?> All rights reserved</div>
                         <!-- author ( Please! Do not delete it. You are awesome! :) -->
 
                     </footer>

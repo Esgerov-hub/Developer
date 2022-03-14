@@ -104,12 +104,11 @@
                                         <li>
                                             <h6>Author:</h6><span>{!! $blogs->name !!}</span>
                                         </li>
-{{--                                        <li>--}}
-{{--                                            <h6>Count:</h6>--}}
-{{--                                            @foreach($get_blogs as $blog)--}}
-{{--                                            <span>{{ $loop->count }}</span>--}}
-{{--                                                @endforeach--}}
-{{--                                        </li>--}}
+
+                                        <li>
+                                            <h6>Reads:</h6><span>{!! $blogs->reads !!}</span>
+                                        </li>
+
                                     </ul>
                                 </div>
                                 <!-- table end -->
@@ -173,11 +172,12 @@
                                                 <!-- title -->
                                                 <a href="{{route('blogPost',$blog->title)}}">
                                                     <h5 class="mb-15">{{$blog->title}}</h5>
+
                                                 </a>
                                                 <!-- text -->
 
                                                 <!-- link -->
-                                                <a href="{{route('blogPost',$blog->title)}}" class="art-link art-color-link art-w-chevron">Read more</a>
+                                                <a href="{{route('blogPost',$blog->title)}}" class="art-link art-color-link art-w-chevron">Read more</a><span>{!! $blog->reads !!}</span>
                                             </div>
                                             <!-- post description end -->
                                         </div>

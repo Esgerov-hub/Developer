@@ -11,7 +11,11 @@ use App\Models\Service;
 use App\Models\User;
 use App\Models\BlogCount;
 use Illuminate\Http\Request;
+//use Symfony\Component\HttpFoundation\Cookie;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Session;
+
+//use Symfony\Component\HttpFoundation\Session\Session;
 
 class IndexController extends Controller
 {
@@ -108,13 +112,6 @@ class IndexController extends Controller
     {
         $blogs = Blog::orderBy('id','desc')->paginate(6);
 
-        if (date('h') )
-        {
-            $blogCount = new BlogCount;
-            $blogCount->blog_id = '1';
-            $blogCount->save();
-        }
-
 
         return view('pages.blog',
         [
@@ -125,8 +122,13 @@ class IndexController extends Controller
 
     public function blogPost($title)
     {
-        $blogs = User::join('blogs','users.id','=','blogs.user_id')->where('title',$title)->first();
-
+        $blogs = User::join('blogs','blogs.user_id','=','users.id')->where('title',$title)->first();
+        $blog = Blog::where('title',$title)->first();
+        $viewed = Session::get('reads', []);
+        if (!in_array($blog->id, $viewed)) {
+            $blog->increment('reads');
+            Session::push('reads', $blog->id);
+        }
         $get_blogs = Blog::orderBy('id','desc')->get();
         return view('pages.blog-post',
         [

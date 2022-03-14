@@ -79,8 +79,10 @@
                                     <!-- post cover -->
                                     <a href="{{ route('blogPost',$blog->title) }}" class="art-port-cover">
                                         <!-- img -->
-                                        <img src="{{ asset(\Illuminate\Support\Facades\Storage::url($blog->image)) }}"
+
+                                        <img  src="{{ asset(\Illuminate\Support\Facades\Storage::url($blog->image)) }}"
                                              alt="blog post">
+
                                     </a>
                                     <!-- post cover end -->
                                     <!-- post description -->
@@ -89,13 +91,16 @@
 
                                         <a href="{{ route('blogPost',$blog->title) }}">
 
-                                            <h5 class="mb-15">{!! $blog->title !!}</h5>
+                                            <h5 class="mb-15">{!! $blog->title !!}   </h5>
+
                                         </a>
                                         <!-- text -->
                                     {{--                                    <div class="mb-15">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet!</div>--}}
                                     <!-- link -->
                                         <a href="{{ route('blogPost',$blog->title) }}" class="art-link art-color-link art-w-chevron">Read
                                             more</a>
+
+                                        <span >{!! $blog->reads !!}</span>
 
                                     </div>
                                     <!-- post description end -->
