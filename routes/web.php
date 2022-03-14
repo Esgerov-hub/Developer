@@ -27,7 +27,7 @@ Route::post('/comment',[IndexController::class,'commentsPost'])->name('commentsP
 
 Route::get('/blog',[IndexController::class,'blog'])->name('blog');
 Route::get('/blog/{title}',[IndexController::class,'blogPost'])->name('blogPost');
-Route::get('/blogCount',[IndexController::class,'blogCountPost'])->name('blogCountPost');
+
 
 Route::resource('users',UsersController::class);
 Route::resource('abouts',AboutController::class);
