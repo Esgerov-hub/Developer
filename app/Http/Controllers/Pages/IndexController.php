@@ -129,6 +129,7 @@ class IndexController extends Controller
             $blog->increment('reads');
             Session::push('reads', $blog->id);
         }
+
         $get_blogs = Blog::orderBy('id','desc')->get();
         return view('pages.blog-post',
         [
