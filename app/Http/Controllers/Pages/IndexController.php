@@ -125,6 +125,7 @@ class IndexController extends Controller
         $blogs = User::join('blogs','blogs.user_id','=','users.id')->where('title',$title)->first();
         $blog = Blog::where('title',$title)->first();
         $viewed = Session::get('reads', []);
+
         if (!in_array($blog->id, $viewed)) {
             $blog->increment('reads');
             Session::push('reads', $blog->id);
@@ -138,6 +139,7 @@ class IndexController extends Controller
 
         ]);
     }
+
 
 
     public function blogCountPost(Request $request)
