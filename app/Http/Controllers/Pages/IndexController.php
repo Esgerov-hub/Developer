@@ -138,6 +138,7 @@ class IndexController extends Controller
         ]);
     }
 
+
     public function blogCountPost(Request $request)
     {
 
