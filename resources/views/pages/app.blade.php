@@ -41,9 +41,9 @@
                     <div class="art-header">
                         <!-- avatar -->
                         <div class="art-avatar">
-                            <a data-fancybox="avatar" href="{{ asset('pages/img/enver.png') }}" class="art-avatar-curtain">
+                            <a   class="art-avatar-curtain">
                                 <img src="{{ asset('pages/img/enver.png') }}" alt="avatar">
-                                <i class="fas fa-expand"></i>
+{{--                                <i class="fas fa-expand"></i>--}}
                             </a>
                             <!-- available -->
                             <div class="art-lamp-light">
@@ -59,7 +59,7 @@
                         <div class="art-links-frame p-15-15">
 
                             <!-- download cv button -->
-                            <a href="{{'https://resume.io/r/kO3omP43T'}}" class="art-link" download><h7>Download cv</h7><i class="fas fa-download"></i></a>
+                            <a href="{{ asset('assets/File/cv.pdf') }}" target="_blank|_self|_parent|_top|framename" class="art-link" download><h7>СV</h7><i class="fas fa-download"></i></a>
 
                         </div>
                     </div>
