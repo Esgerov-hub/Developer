@@ -102,6 +102,10 @@
                         <a href="{{ route('blogs.index') }}"><i class="la la-blog"></i> <span> Blogs</span></a>
 
                     </li>
+                    <li >
+                        <a href="{{ route('admin.contact') }}"><i class="la la-users-cog"></i> <span> Contacts</span></a>
+
+                    </li>
                 </ul>
             </div>
         </div>

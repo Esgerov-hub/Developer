@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Comment;
+use App\Models\Contact;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -37,6 +38,20 @@ class HomeController extends Controller
 
         Comment::where('id',$id)->delete();
         return redirect(route('home'));
+
+    }
+
+    public function contact()
+    {
+        $contacts = Contact::orderBy('id','desc')->get();
+        return view('layouts.contact',compact('contacts'));
+    }
+
+    public function contactDelete($id)
+    {
+
+        Contact::where('id',$id)->delete();
+        return redirect(route('admin.contact'));
 
     }
 }

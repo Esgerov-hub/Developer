@@ -39,3 +39,5 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/delete/{id}', [App\Http\Controllers\HomeController::class, 'delete'])->name('delete');
+Route::get('/home/contact', [App\Http\Controllers\HomeController::class, 'contact'])->name('admin.contact');
+Route::get('/contactDelete/{id}', [App\Http\Controllers\HomeController::class, 'contactDelete'])->name('contact.delete');

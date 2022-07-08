@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\About;
 use App\Models\Blog;
 use App\Models\Comment;
+use App\Models\Contact;
 use App\Models\Project;
 use App\Models\Service;
 use App\Models\User;
@@ -74,18 +75,24 @@ class IndexController extends Controller
                 'email' => 'required',
                 'text' => 'required'
             ]);
-        Mail::send([], [],
 
-            function ($message) use ($request) {
-//                $message->from($request->email, $request->email);
-                $message->to('anvarasgarov.dev@gmail.com');
-                $message->setBody(
-                    "Soyad,Ad: " . $request->name .
-                    "<br />E-Poçt: " . $request->email .
-                    "<br />Mətn: " . " " . $request->text . '', 'text/html');
-                $message->subject($request->name . ' ' . 'mesaj gonderdi!');
-                return $message;
-            });
+        $contact = new Contact();
+        $contact->name = $request->name;
+        $contact->email = $request->email;
+        $contact->text = $request->text;
+        $contact->save();
+//        Mail::send([], [],
+//
+//            function ($message) use ($request) {
+////                $message->from($request->email, $request->email);
+//                $message->to('anvarasgarov.dev@gmail.com');
+//                $message->setBody(
+//                    "Soyad,Ad: " . $request->name .
+//                    "<br />E-Poçt: " . $request->email .
+//                    "<br />Mətn: " . " " . $request->text . '', 'text/html');
+//                $message->subject($request->name . ' ' . 'mesaj gonderdi!');
+//                return $message;
+//            });
 
 
 
