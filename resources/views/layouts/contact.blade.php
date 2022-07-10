@@ -8,7 +8,7 @@
               content="admin, estimates, bootstrap, business, corporate, creative, management, minimal, modern, accounts, invoice, html5, responsive, CRM, Projects">
         <meta name="author" content="Dreamguys - Bootstrap Admin Template">
         <meta name="robots" content="noindex, nofollow">
-        <title>About Us</title>
+        <title>Anvar Asgarov | About Us</title>
 
         <!-- Favicon -->
         <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/img/favicon.png') }}">

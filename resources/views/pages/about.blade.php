@@ -19,7 +19,7 @@
         <!-- main css -->
         <link rel="stylesheet" href="{{ asset('pages/css/style.css') }}">
 
-        <title>About</title>
+        <title>Anvar Asgarov | About</title>
     </head>
 @endsection
 @section('pages.body')

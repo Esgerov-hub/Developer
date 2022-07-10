@@ -20,7 +20,7 @@
         <!-- main css -->
         <link rel="stylesheet" href="{{ asset('pages/css/style.css') }}">
 
-        <title>Index</title>
+        <title>Anvar Asgarov</title>
     </head>
 @endsection
 @section('pages.body')

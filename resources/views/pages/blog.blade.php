@@ -34,7 +34,7 @@
                 display: none;
             }
         </style>
-        <title>Blog</title>
+        <title>Anvar Asgarov | Blog</title>
     </head>
 @endsection
 @section('pages.body')

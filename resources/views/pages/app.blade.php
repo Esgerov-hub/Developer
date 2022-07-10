@@ -373,13 +373,13 @@
                         <!-- menu end -->
 
                         <!-- language change -->
-                        <ul class="art-language-change">
-                            <!-- language item -->
-                            <li class="art-active-lang"><a ></a></li>
-                            <!-- language item -->
-                            <li class="art-active-lang"><a ></a></li>
-                            <li class="art-active-lang"><a ></a></li>
-                        </ul>
+{{--                        <ul class="art-language-change">--}}
+{{--                            <!-- language item -->--}}
+{{--                            <li class="art-active-lang"><a ></a></li>--}}
+{{--                            <!-- language item -->--}}
+{{--                            <li class="art-active-lang"><a ></a></li>--}}
+{{--                            <li class="art-active-lang"><a ></a></li>--}}
+{{--                        </ul>--}}
                         <!-- language change end -->
 
                     </div>
